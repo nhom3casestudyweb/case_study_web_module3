@@ -65,7 +65,7 @@ create table product(
  product_inventory int not null,
  foreign key (product_type_id) references product_type(product_type_id)
 );
-create table prodct_images(
+create table product_images(
 product_images_id int primary key auto_increment,
 images_url varchar(100) not null,
 product_id int not null,
