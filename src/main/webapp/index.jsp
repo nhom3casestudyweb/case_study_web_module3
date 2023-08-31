@@ -13,7 +13,9 @@
 <body>
 <div class="header">
     <!--    header-menu-->
+    <%--    người viết: hậu--%>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<%--        logo wed--%>
         <div class="logo ">
             <img src="data:image/png;base64,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"
                  alt="">
@@ -32,15 +34,20 @@
                 </div>
 
                 <div class="nav-btns">
+                    <%--                    đăng nhập--%>
                     <button class="btn-primary"><a
                             href="http://localhost:63342/case_tudy_wed/login/login.html?_ijt=pbcsdpi12lmrbrb4ndv47f4af5&_ij_reload=RELOAD_ON_SAVE">Đăng
                         nhập</a></button>
+
+                    <%--    tìm kiếm--%>
                     <div class="search-box">
                         <input class="search-box-input" type="search" placeholder="Tìm tên sản phẩm...">
                         <button class="search-box-btn">
                             <i class='bx bx-search-alt'></i>
                         </button>
                     </div>
+
+<%--                        giỏ hàng--%>
                     <button class="search-box-cart">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
@@ -48,6 +55,7 @@
             </ul>
         </div>
     </nav>
+<%--    hết--%>
 
     <!--//header2-->
     <div class="header-content">
@@ -61,6 +69,8 @@
                     </div>
                 </div>
             </div>
+
+<%--            ảnh phần header--%>
             <div class="col-xl-7 col-md-12">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade">
                     <div class="carousel-inner">
@@ -105,19 +115,21 @@
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                            data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                            data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-
             </div>
         </div>
     </div>
+<%--    hết--%>
 
     <!--    mô tả 1-->
     <div class="row class-content">
@@ -167,8 +179,8 @@
             </div>
         </div>
     </div>
-    <!--hết-->
 </div>
+<!--hết-->
 
 <!--giới thiệu sp bán chạy-->
 <div class="row">
@@ -177,15 +189,23 @@
     </div>
 </div>
 
+<%--xem ảnh sản phẩm bán chạy --%>
 <div id="carouselExampleCaptions" class="carousel slide">
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+                aria-label="Slide 7"></button>
     </div>
     <div class="carousel-inner" id="text">
         <div class="carousel-item active">
@@ -247,7 +267,10 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+<%--hết--%>
 <br>
+
+
 
 <!--    footer-->
 <div class="class-endow">
@@ -281,6 +304,7 @@
     <!--        i-->
 </div>
 
+<%--nhãn--%>
 <div class="none"></div>
 <footer class="py-3 my-4">
     <p class="text-center text-body-secondary">© C0523G1 Group3</p>
@@ -309,6 +333,7 @@
         document.documentElement.scrollTop = 0;
     }
 </script>
+<%--Ký tên: Nguyễn Hữu Hậu--%>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
