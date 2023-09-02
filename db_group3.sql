@@ -71,3 +71,4 @@ images_url varchar(100) not null,
 product_id int not null,
 foreign key(product_id) references product(product_id)
 );
+
