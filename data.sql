@@ -183,5 +183,28 @@ Bao gồm : 3 lỗ cắm thông dụng , 3 lỗ cắm cổng 3 chân , 2 lỗ c�
  Sạc không dây thế hệ mới , tích hợp xạc nhanh 15W Cho tốc độ xạc nhanh , tích hợp cổng USB chuẩn , và cổng USB C .
 Chống nước , thiết kế đẹp mắt","3",7);
 
+insert into product_images(images_url,product_id)
+values("SMARTDESK GAMING GREY.png",2),
+("SMARTDESK GAMING RED PC.png",3),
+("SMARTDESK GAMING WALNUT.png",1),
+("SMARTDESK GO.png",8),
+("SMARTDESK HOME BLACK.png",7),
+("SMARTDESK OFFICE PLUS.png",5),
+("SMARTDESK OFFICE WOOD.png",6),
+("TECHDESK PRO WHITE.png",4),
+("Ergochair pro 1 Gray.jpg",12),
+("Ergochair Pro 3.jpg",13),
+("ERGONOMIC E1 CHAIR BLACK.png",9),
+("ERGONOMIC E3 CHAIR.png",10),
+("ERGONOMIC FLY PRO.png",15),
+("GHẾ DVARY BUTTERFLY GRAY.png",16),
+("Ghế ErgoChair Plus.png",14),
+("GHẾ ERGONOMIC E2.png",11),
+("BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK.png",20),
+("Giá đỡ CPU HOLD 2.jpeg",18),
+("SẠC KHÔNG DÂY THÔNG MINH.jpeg",21),
+("USB HUB PRO.jpeg",17),
+("Ổ CẮM ĐIỆN ÂM BÀN.jpg",19);
+
 
 
