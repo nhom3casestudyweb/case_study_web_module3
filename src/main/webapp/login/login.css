@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: unset;
+    font-family: Arial, serif;
 }
 
 body {
@@ -90,6 +90,14 @@ body {
     color: black;
     font-weight: 600;
 }
+@keyframes sparkle {
+    0% { opacity: 1; color: red; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; color: red; }
+}
+.wrapper .btn:hover{
+    animation: sparkle 1s infinite;
+}
 .wrapper .register-link{
     font-size: 15px;
     text-align: center;
@@ -117,3 +125,4 @@ img{
     height: 100%;
     object-position: center;
 }
+

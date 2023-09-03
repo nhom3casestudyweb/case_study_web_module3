@@ -1,24 +1,27 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Công thái học</title>
-    <link rel="stylesheet" href="home_page2.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="home_page2.css">
 </head>
 <body>
 <div class="header">
     <!--    header-menu-->
-    <%--    người viết: hậu--%>
+    <!--    người viết: hậu-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-<%--        logo wed--%>
-        <div class="logo ">
-            <img src="data:image/png;base64,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"
-                 alt="">
+        <!--        logo wed-->
+        <div class="logo">
+            <img src="logo.png">
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -28,26 +31,32 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">
                 <div class="nav-links">
-                    <li><a href=""></a>Trang chủ</li>
-                    <li><a href=""></a>Sản phẩm</li>
-                    <li><a href="https://nhom3casestudyweb.github.io/demo_profile_card/">Liên hệ</a></li>
+                    <li><a href="index.jsp">Trang chủ</a></li>
+
+                    <li>
+                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                            Sản phẩm
+                        </a>
+                    </li>
+
+                    <li><a href="/profile_card/profilecard.jsp" target="_blank">Liên hệ</a></li>
                 </div>
 
                 <div class="nav-btns">
-                    <%--                    đăng nhập--%>
-                    <button class="btn-primary"><a
-                            href="http://localhost:63342/case_tudy_wed/login/login.html?_ijt=pbcsdpi12lmrbrb4ndv47f4af5&_ij_reload=RELOAD_ON_SAVE">Đăng
+                    <!--                   đăng nhập-->
+                    <button class="btn-primary" type="submit"><a
+                            href="/login/login.jsp">Đăng
                         nhập</a></button>
 
-                    <%--    tìm kiếm--%>
+                    <!--                     tìm kiếm-->
                     <div class="search-box">
                         <input class="search-box-input" type="search" placeholder="Tìm tên sản phẩm...">
-                        <button class="search-box-btn">
+                        <button class="search-box-btn" type="submit">
                             <i class='bx bx-search-alt'></i>
                         </button>
                     </div>
 
-<%--                        giỏ hàng--%>
+                    <!--                          giỏ hàng-->
                     <button class="search-box-cart">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
@@ -55,7 +64,42 @@
             </ul>
         </div>
     </nav>
-<%--    hết--%>
+    <!--    hết-->
+
+
+    <!--    danh sách option sản phẩm-->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="font-weight: bold">
+                Ergonomic3 Store
+                <i class="fa-solid fa-bag-shopping"></i>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+                Chúng tôi đặt quyền lợi khách hàng lên hàng đầu,
+                cung cấp các dịch vụ và trải nghiệm tuyệt vời nhất cho khách hàng về sản phẩm tại shop
+            </div>
+            <div class="dropdown mt-3">
+                <button id="selection-product" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Xem sản phẩm của shop tại đây
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế công thái học</a></li>
+                    <li><a style="font-weight: bold" class="dropdown-item" href="#">Bàn công thái học</a></li>
+                    <li><a style="font-weight: bold" class="dropdown-item" href="#">Phụ kiện công thái học</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a style="font-weight: bold" class="dropdown-item" href="#">
+                        Sản phẩm HOT
+                        <i class="fa-solid fa-fire"></i>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--    hết-->
+
 
     <!--//header2-->
     <div class="header-content">
@@ -65,12 +109,12 @@
                     <h1>Thưởng thức sự tiện nghi</h1>
                     <p>Sự kết hợp mới mẻ</p>
                     <div class="btns">
-                        <button class="btn-primary" style="width: 150px; font-size: 23px">Bắt đầu</button>
+                        <button class="btn-primary" style="width: 150px; font-size: 23px" onclick="introFunction()" id="start" title="Go to top">Bắt đầu</button>
                     </div>
                 </div>
             </div>
 
-<%--            ảnh phần header--%>
+            <!--             ảnh phần header-->
             <div class="col-xl-7 col-md-12">
                 <div id="carouselExampleFade" class="carousel slide carousel-fade">
                     <div class="carousel-inner">
@@ -129,7 +173,7 @@
             </div>
         </div>
     </div>
-<%--    hết--%>
+    <!--    hết-->
 
     <!--    mô tả 1-->
     <div class="row class-content">
@@ -189,7 +233,7 @@
     </div>
 </div>
 
-<%--xem ảnh sản phẩm bán chạy --%>
+<!--xem ảnh sản phẩm bán chạy-->
 <div id="carouselExampleCaptions" class="carousel slide">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -267,7 +311,7 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<%--hết--%>
+<!--hết-->
 <br>
 
 
@@ -304,7 +348,7 @@
     <!--        i-->
 </div>
 
-<%--nhãn--%>
+<!--nhãn-->
 <div class="none"></div>
 <footer class="py-3 my-4">
     <p class="text-center text-body-secondary">© C0523G1 Group3</p>
@@ -332,8 +376,12 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
+    function introFunction() {
+        document.body.scrollTop = 780;
+        document.documentElement.scrollTop = 780;
+    }
 </script>
-<%--Ký tên: Nguyễn Hữu Hậu--%>
+<!--Ký tên: Nguyễn Hữu Hậu-->
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
