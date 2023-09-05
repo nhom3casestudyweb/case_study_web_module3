@@ -4,6 +4,7 @@ public class ProductType {
     private int product_type_id;
     private String product_type_name;
 
+
     public ProductType() {
     }
 

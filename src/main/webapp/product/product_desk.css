@@ -42,14 +42,14 @@ p, h3 {
 }
 
 .card-img {
-    height: 83%;
-    width: 83%;
-    margin-left: 15%;
+    height: 69%;
+    width: 132%;
+    margin-left: -16%;
     transition: 1s;
 }
 
 .card-img img {
-    width: 63%;
+    width: 73%;
     height: 100%;
     object-fit: cover;
     margin-bottom: 30px;
@@ -80,7 +80,7 @@ p, h3 {
 }
 
 .card:hover .card-img {
-    transform: translateY(-90px) rotate(-10deg);
+    transform: translateY(-90px) rotate(-1deg);
 }
 
 .card:hover .card-title {

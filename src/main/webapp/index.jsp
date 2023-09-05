@@ -13,6 +13,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="home_page2.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
 <div class="header">
@@ -50,14 +51,28 @@
 
                     <!--                     tìm kiếm-->
                     <div class="search-box">
-                        <input class="search-box-input" type="search" placeholder="Tìm tên sản phẩm...">
-                        <button class="search-box-btn" type="submit">
+                        <input list="topics" class="search-box-input" type="text" placeholder="Tìm tên sản phẩm...">
+                        <datalist id="topics">
+                            <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
+                            <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng - Phiên Bản Hợp Kim Phủ Nano, Manson FR-09">
+                            <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen, Lưng Nâng Hạ, Mặt Ngồi Trượt, Tay 3D, Piston 4 Cấp BIFMA">
+                            <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic - Trắng">
+                            <option value="Bàn SMARTDESK GAMING">
+                            <option value="Bàn SMARTDESK GAMING BLACK PC">
+                            <option value="Bàn SMARTDESK STUDIO PRO">
+                            <option value="Bàn SMARTDESK STUDIO PIANO">
+                            <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
+                            <option value="Giá Treo CPU Buddy">
+                        </datalist>
+                        <button type="submit" class="search-box-btn">
                             <i class='bx bx-search-alt'></i>
                         </button>
                     </div>
 
                     <!--                          giỏ hàng-->
-                    <button class="search-box-cart">
+                    <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fa-solid fa-cart-plus"></i>
                     </button>
                 </div>
@@ -87,8 +102,8 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế công thái học</a></li>
-                    <li><a style="font-weight: bold" class="dropdown-item" href="#">Bàn công thái học</a></li>
-                    <li><a style="font-weight: bold" class="dropdown-item" href="#">Phụ kiện công thái học</a></li>
+                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn công thái học</a></li>
+                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a style="font-weight: bold" class="dropdown-item" href="#">
                         Sản phẩm HOT
@@ -100,6 +115,28 @@
     </div>
     <!--    hết-->
 
+    <!--    menu giỏ hàng-->
+    <form action="" method="">
+        <div style="background: grey" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h3 class="offcanvas-title" id="offcanvasRightLabel">Giỏ hàng của bạn</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                Giỏ hàng của bạn đang trống !
+            </div>
+            <hr>
+            <div class="price-product">
+                <h4 class="total-price">Tổng tiền</h4>
+                <h4 class="price">0 đ</h4>
+            </div>
+            <p style="font-size: 13px; margin: 19px 14px">Phí vận chuyển sẽ được tính khi bạn thanh toán sản phẩm</p>
+            <button class="buy-product" type="submit">
+                Thanh Toán
+            </button>
+        </div>
+    </form>
+    <!--    hết-->
 
     <!--//header2-->
     <div class="header-content">
