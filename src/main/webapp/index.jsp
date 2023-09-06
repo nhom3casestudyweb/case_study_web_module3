@@ -12,8 +12,8 @@
           crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link rel="stylesheet" href="home_page2.css">
-    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="css/home_page2.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
 <div class="header">
@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <!--        logo wed-->
         <div class="logo">
-            <img src="logo.png">
+            <img src="home_img/logo.png">
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -40,13 +40,13 @@
                         </a>
                     </li>
 
-                    <li><a href="/profile_card/profilecard.jsp" target="_blank">Liên hệ</a></li>
+                    <li><a href="/profilecard.jsp" target="_blank">Liên hệ</a></li>
                 </div>
 
                 <div class="nav-btns">
                     <!--                   đăng nhập-->
                     <button class="btn-primary" type="submit"><a
-                            href="/login/login.jsp">Đăng
+                            href="/login.jsp">Đăng
                         nhập</a></button>
 
                     <!--                     tìm kiếm-->
@@ -157,42 +157,42 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="hero-img">
-                                <img src="header10.jpg" alt="">
+                                <img src="home_img/header10.jpg" alt="">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
-                                <img src="header6.png" alt="">
+                                <img src="home_img/header6.png" alt="">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
-                                <img src="header7.jpg" alt="">
+                                <img src="home_img/header7.jpg" alt="">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
-                                <img src="header8.png" alt="">
+                                <img src="home_img/header8.png" alt="">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
-                                <img src="header9.jpg" alt="">
+                                <img src="home_img/header9.jpg" alt="">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
-                                <img src="header5.jpg" alt="">
+                                <img src="home_img/header5.jpg" alt="">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
-                                <img src="header11.jpg" alt="">
+                                <img src="home_img/header11.jpg" alt="">
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
-                                <img src="header12.jpg" alt="">
+                                <img src="home_img/header12.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
         <div class="col-md-12 col-xl-6">
             <!--        hình ảnh mô tả-->
             <div class="content-img">
-                <img src="header1.jpg" alt="">
+                <img src="home_img/header1.jpg" alt="">
             </div>
         </div>
     </div>
@@ -290,28 +290,28 @@
     </div>
     <div class="carousel-inner" id="text">
         <div class="carousel-item active">
-            <img src="top8.jpg" class="d-block w-100" alt="...">
+            <img src="home_img/top8.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h3 class="text">Ergochair pro 1 Gray</h3>
                 <p class="text">Đã bán 103 ghế</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="top1.jpg" class="d-block w-100" alt="...">
+            <img src="home_img/top1.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text">Ergochair Pro 2</h5>
                 <p class="text">Đã bán 194 ghế</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="top3.jpg" class="d-block w-100" alt="...">
+            <img src="home_img/top3.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text">KD-09</h5>
                 <p class="text">Đã bán 123 ghế</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="topp4jpg.jpg" class="d-block w-100" alt="...">
+            <img src="home_img/topp4jpg.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text">ERGOHUMAN PLATINUM</h5>
                 <p class="text">Đã bán 201 ghế</p>
@@ -325,14 +325,14 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="top6.jpg" class="d-block w-100" alt="...">
+            <img src="home_img/top6.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5 style="color: black">SMARTDESK GAMING WHITE BLACK PC</h5>
                 <p style="color: black">Đã bán 351 bàn</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="top7.jpg" class="d-block w-100" alt="...">
+            <img src="home_img/top7.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text">Ergochair Pro 3</h5>
                 <p class="text">Đã bán 122 ghế</p>

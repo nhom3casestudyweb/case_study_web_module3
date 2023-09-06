@@ -15,14 +15,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="/product_details/productdetails.css">
+    <link rel="stylesheet" href="/css/productdetails.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 <body>
 <div class="header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="logo">
-            <img src="logo_pixian.png"
+            <img src="product_details/logo_pixian.png"
                  alt="">
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -42,13 +42,13 @@
                         </a>
                     </li>
 
-                    <li><a href="/profile_card/profilecard.jsp" target="_blank">Liên hệ</a></li>
+                    <li><a href="/profilecard.jsp" target="_blank">Liên hệ</a></li>
                     </li>
                 </div>
 
                 <div class="nav-btns">
                     <button class="btn-primary"><a
-                            href="/login/login.jsp">Đăng
+                            href="/login.jsp">Đăng
                         nhập</a></button>
 
                     <div class="search-box">
@@ -159,7 +159,7 @@
             <!--        ảnh-->
                 <div class="col-xl-5 col-md-12">
                     <div class="hero-img">
-                        <img src="${product.imagesUrl}"/>
+                        <img src="/img_product/${product.imagesUrl}"/>
                     </div>
                 </div>
                 <div class="col-xl-7 col-md-12">

@@ -42,13 +42,13 @@
                         </a>
                     </li>
 
-                    <li><a href="/profile_card/profilecard.jsp" target="_blank">Liên hệ</a></li>
+                    <li><a href="/profilecard.jsp" target="_blank">Liên hệ</a></li>
                     </li>
                 </div>
 
                 <div class="nav-btns">
                     <button class="btn-primary"><a
-                            href="/login/login.jsp">Đăng
+                            href="/login.jsp">Đăng
                         nhập</a></button>
 
                     <div class="search-box">

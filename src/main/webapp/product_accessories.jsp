@@ -12,19 +12,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="form_product.css">
+    <link rel="stylesheet" href="css/form_product.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link rel="stylesheet" href="/product/product_desk.css">
-    <link rel="stylesheet" href="/cart.css">
+    <link rel="stylesheet" href="/css/product_accessories.css">
+    <link rel="stylesheet" href="/css/cart.css">
 </head>
 <body>
 <div class="header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="logo ">
-            <img src="logo_pixian.png"
+            <img src="product/logo_pixian.png"
                  alt="">
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -43,13 +43,13 @@
                         </a>
                     </li>
 
-                    <li><a href="/profile_card/profilecard.jsp" target="_blank">Liên hệ</a></li>
+                    <li><a href="/profilecard.jsp" target="_blank">Liên hệ</a></li>
                     </li>
                 </div>
 
                 <div class="nav-btns">
                     <button class="btn-primary"><a
-                            href="/login/login.jsp">Đăng
+                            href="/login.jsp">Đăng
                         nhập</a></button>
 
                     <div class="search-box">
@@ -70,7 +70,6 @@
                             <i class='bx bx-search-alt'></i>
                         </button>
                     </div>
-
 
 
                     <!--                          giỏ hàng-->
@@ -147,16 +146,17 @@
 <!--header-->
 <div class="class-deader-product">
     <h1>Sản phẩm</h1>
-    <p>các sản phẩm ghế công thái học có mặt tại cửa hàng</p>
+    <p>các phụ kiện công thái học có mặt tại cửa hàng</p>
 </div>
 
 <div class="container text-center">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-        <c:forEach var="product" items="${listDesk}">
+        <c:forEach var="product" items="${listAccessories}">
             <div class="col">
                 <div class="card">
                     <div class="card-img">
-                        <img src="${product.erasingImg}"/>
+                        <img src="/erasing_img_product/accsessories/${product.erasingImg}"/>
+
                     </div>
                     <div class="card-title">
                         <p><c:out value="${product.productName}"/></p>
@@ -208,6 +208,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
-<script src="search.js"></script>
+<script src="product/search.js"></script>
 </body>
 </html>

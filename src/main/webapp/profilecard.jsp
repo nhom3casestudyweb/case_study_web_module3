@@ -11,12 +11,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="profilecard.css">
+    <link rel="stylesheet" href="/css/profilecard.css">
 </head>
 <body>
 <div class="card-to">
     <div class="card-img">
-        <img src="hau.jpg">
+        <img src="/profile_card/hau.jpg">
     </div>
     <h2>Hau Nguyen</h2>
     <p>Developer men</p>
@@ -85,7 +85,7 @@
 <!--    me-->
 <div class="card-to">
     <div class="card-img">
-        <img src="long.jpg">
+        <img src="/profile_card/long.jpg">
     </div>
     <h2>Dinh Long</h2>
     <p>Developer men</p>

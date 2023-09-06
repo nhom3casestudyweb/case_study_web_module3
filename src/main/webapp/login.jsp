@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -23,7 +23,7 @@
         <div class="col col-xl">
             <div class="wrapper">
                 <div class="class-img">
-                    <img src="user.jpg"/>
+                    <img src="/login_img/user.jpg"/>
                 </div>
                 <div class="input-box">
                     <input id="inputEmail" type="text" placeholder="Tên đăng nhập hoặc email" required autofocus>
