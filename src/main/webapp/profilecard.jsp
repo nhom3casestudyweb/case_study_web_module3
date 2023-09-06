@@ -62,29 +62,6 @@
 <!--    me-->
 <div class="card-to">
     <div class="card-img">
-        <img src="https://anhdep123.com/wp-content/uploads/2020/11/avatar-facebook-mac-dinh-nam.jpeg">
-    </div>
-    <h2>Thanh Viet</h2>
-    <p>Developer men</p>
-    <div class="card-social">
-        <a href="">
-            <i class='bx bxl-facebook-circle'></i>
-        </a>
-        <a href="">
-            <i class='bx bxl-tiktok' ></i>
-        </a>
-        <a href="">
-            <i class='bx bxl-slack'></i>
-        </a>
-        <a href="">
-            <i class='bx bxl-github' ></i>
-        </a>
-    </div>
-    <button>Contact Me</button>
-</div>
-<!--    me-->
-<div class="card-to">
-    <div class="card-img">
         <img src="/profile_card/long.jpg">
     </div>
     <h2>Dinh Long</h2>

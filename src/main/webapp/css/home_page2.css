@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, lightblue, #d2b397);
+    background: seashell;
 }
 
 .header {
@@ -73,7 +73,7 @@ nav {
 
 .header-content {
     overflow: hidden;
-    background: linear-gradient(to right, #BDB1C5, #DDD7D0);
+    background: lightgrey;
     display: flex;
     min-height: 70vh;
     border-radius: 50px;
