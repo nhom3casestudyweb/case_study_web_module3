@@ -147,7 +147,7 @@
 <!--header-->
 <div class="class-deader-product">
     <h1>Sản phẩm</h1>
-    <p>các sản phẩm ghế công thái học có mặt tại cửa hàng</p>
+    <p>các sản phẩm bàn công thái học có mặt tại cửa hàng</p>
 </div>
 
 <div class="container text-center">

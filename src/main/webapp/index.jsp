@@ -35,7 +35,8 @@
                     <li><a href="index.jsp">Trang chủ</a></li>
 
                     <li>
-                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                           aria-controls="offcanvasExample">
                             Sản phẩm
                         </a>
                     </li>
@@ -50,24 +51,27 @@
                         nhập</a></button>
 
                     <!--                     tìm kiếm-->
-                    <div class="search-box">
-                        <input list="topics" class="search-box-input" type="text" placeholder="Tìm tên sản phẩm...">
-                        <datalist id="topics">
-                            <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
-                            <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng - Phiên Bản Hợp Kim Phủ Nano, Manson FR-09">
-                            <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen, Lưng Nâng Hạ, Mặt Ngồi Trượt, Tay 3D, Piston 4 Cấp BIFMA">
-                            <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic - Trắng">
-                            <option value="Bàn SMARTDESK GAMING">
-                            <option value="Bàn SMARTDESK GAMING BLACK PC">
-                            <option value="Bàn SMARTDESK STUDIO PRO">
-                            <option value="Bàn SMARTDESK STUDIO PIANO">
-                            <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
-                            <option value="Giá Treo CPU Buddy">
-                        </datalist>
-                        <button type="submit" class="search-box-btn">
-                            <i class='bx bx-search-alt'></i>
-                        </button>
-                    </div>
+
+                    <form action="" method="post">
+                        <div class="search-box">
+                            <input list="topics" class="search-box-input" type="text" placeholder="Tìm tên sản phẩm...">
+                            <datalist id="topics">
+                                <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
+                                <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng - Phiên Bản Hợp Kim Phủ Nano, Manson FR-09">
+                                <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen, Lưng Nâng Hạ, Mặt Ngồi Trượt, Tay 3D, Piston 4 Cấp BIFMA">
+                                <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic - Trắng">
+                                <option value="Bàn SMARTDESK GAMING">
+                                <option value="Bàn SMARTDESK GAMING BLACK PC">
+                                <option value="Bàn SMARTDESK STUDIO PRO">
+                                <option value="Bàn SMARTDESK STUDIO PIANO">
+                                <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
+                                <option value="Giá Treo CPU Buddy">
+                            </datalist>
+                            <button type="submit" class="search-box-btn">
+                                <i class='bx bx-search-alt'></i>
+                            </button>
+                        </div>
+                    </form>
 
                     <!--                          giỏ hàng-->
                     <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"
@@ -97,14 +101,20 @@
                 cung cấp các dịch vụ và trải nghiệm tuyệt vời nhất cho khách hàng về sản phẩm tại shop
             </div>
             <div class="dropdown mt-3">
-                <button id="selection-product" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                <button id="selection-product" class="btn btn-secondary dropdown-toggle" type="button"
+                        data-bs-toggle="dropdown">
                     Xem sản phẩm của shop tại đây
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế công thái học</a></li>
-                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn công thái học</a></li>
-                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế
+                        công thái học</a></li>
+                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn
+                        công thái học</a></li>
+                    <li><a style="font-weight: bold" class="dropdown-item"
+                           href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
                     <li><a style="font-weight: bold" class="dropdown-item" href="#">
                         Sản phẩm HOT
                         <i class="fa-solid fa-fire"></i>
@@ -117,7 +127,8 @@
 
     <!--    menu giỏ hàng-->
     <form action="" method="">
-        <div style="background: grey" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div style="background: grey" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+             aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
                 <h3 class="offcanvas-title" id="offcanvasRightLabel">Giỏ hàng của bạn</h3>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -146,7 +157,9 @@
                     <h1>Thưởng thức sự tiện nghi</h1>
                     <p>Sự kết hợp mới mẻ</p>
                     <div class="btns">
-                        <button class="btn-primary" style="width: 150px; font-size: 23px" onclick="introFunction()" id="start" title="Go to top">Bắt đầu</button>
+                        <button class="btn-primary" style="width: 150px; font-size: 23px" onclick="introFunction()"
+                                id="start" title="Go to top">Bắt đầu
+                        </button>
                     </div>
                 </div>
             </div>
@@ -318,7 +331,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img src="header3.webp" class="d-block w-100" alt="...">
+            <img src="home_img/header3.webp" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text">ERGONOMIC E6</h5>
                 <p class="text">Đã bán 163 bàn</p>
@@ -352,7 +365,6 @@
 <br>
 
 
-
 <!--    footer-->
 <div class="row">
     <div class="col-md-12 col-lg-3 ">
@@ -366,7 +378,6 @@
             <!--        i-->
         </div>
     </div>
-
 
 
     <div class="col-md-12 col-lg-3 ">
@@ -434,6 +445,7 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
+
     function introFunction() {
         document.body.scrollTop = 780;
         document.documentElement.scrollTop = 780;
