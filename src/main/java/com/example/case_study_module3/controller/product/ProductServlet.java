@@ -13,14 +13,15 @@ import java.util.List;
 @WebServlet(name = "ProductServlet", value = "/product-servlet")
 public class ProductServlet extends HttpServlet {
     private IProductService productService = new ProductService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
-        if (action == null){
+        if (action == null) {
             action = "";
         }
-        switch (action){
+        switch (action) {
             case "showFormCreate":
                 break;
             case "showFormUpdate":
@@ -30,24 +31,25 @@ public class ProductServlet extends HttpServlet {
             case "showListChair":
                 showListChair(request, response);
                 break;
-            case "showChairDetails":
-                showChairDetails(request, response);
-                break;
             case "showListDesk":
                 showListDesk(request, response);
                 break;
             case "showListAccessories":
                 showListAccessories(request, response);
                 break;
+            case "showProductDetail":
+                showProductDetail(request, response);
+                break;
         }
     }
 
-    private void showChairDetails(HttpServletRequest request, HttpServletResponse response) {
-        List<Product> chairDetails = productService.showListChair();
-        request.setAttribute("chairDetails",chairDetails);
+    private void showProductDetail(HttpServletRequest request, HttpServletResponse response) {
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        Product product = productService.finById(productId);
+        request.setAttribute("product", product);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_details/productdetails.jsp");
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
@@ -55,10 +57,10 @@ public class ProductServlet extends HttpServlet {
 
     private void showListChair(HttpServletRequest request, HttpServletResponse response) {
         List<Product> listChair = productService.showListChair();
-        request.setAttribute("listChair",listChair);
+        request.setAttribute("listChair", listChair);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product/product_chair.jsp");
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
@@ -66,21 +68,21 @@ public class ProductServlet extends HttpServlet {
 
     private void showListDesk(HttpServletRequest request, HttpServletResponse response) {
         List<Product> listDesk = productService.showListDesk();
-        request.setAttribute("listDesk",listDesk);
+        request.setAttribute("listDesk", listDesk);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product/product_desk.jsp");
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     private void showListAccessories(HttpServletRequest request, HttpServletResponse response) {
-        List<Product> showListAccessories = productService.showListAccessories();
-        request.setAttribute("showListAccessories",showListAccessories);
+        List<Product> listAccessories = productService.showListAccessories();
+        request.setAttribute("listAccessories", listAccessories);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product/product_accessories.jsp");
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }

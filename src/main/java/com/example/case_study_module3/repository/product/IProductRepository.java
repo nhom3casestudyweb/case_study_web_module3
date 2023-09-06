@@ -8,4 +8,5 @@ public interface IProductRepository {
     List<Product> showListChair();
     List<Product> showListDesk();
     List<Product> showListAccessories();
+    Product finById(int productId);
 }

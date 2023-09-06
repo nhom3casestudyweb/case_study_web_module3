@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -14,7 +15,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="productdetails.css">
+    <link rel="stylesheet" href="/product_details/productdetails.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 <body>
@@ -35,7 +36,8 @@
                     <li><a href="index.jsp">Trang chủ</a></li>
 
                     <li>
-                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                           aria-controls="offcanvasExample">
                             Sản phẩm
                         </a>
                     </li>
@@ -69,7 +71,6 @@
                     </div>
 
 
-
                     <!--                          giỏ hàng-->
                     <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"
                             data-bs-toggle="offcanvas"
@@ -97,14 +98,20 @@
             cung cấp các dịch vụ và trải nghiệm tuyệt vời nhất cho khách hàng về sản phẩm tại shop
         </div>
         <div class="dropdown mt-3">
-            <button id="selection-product" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <button id="selection-product" class="btn btn-secondary dropdown-toggle" type="button"
+                    data-bs-toggle="dropdown">
                 Xem sản phẩm của shop tại đây
             </button>
             <ul class="dropdown-menu">
-                <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế công thái học</a></li>
-                <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn công thái học</a></li>
-                <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
-                <li><hr class="dropdown-divider"></li>
+                <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế
+                    công thái học</a></li>
+                <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn
+                    công thái học</a></li>
+                <li><a style="font-weight: bold" class="dropdown-item"
+                       href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
                 <li><a style="font-weight: bold" class="dropdown-item" href="#">
                     Sản phẩm HOT
                     <i class="fa-solid fa-fire"></i>
@@ -117,7 +124,8 @@
 
 <!--    menu giỏ hàng-->
 <form action="" method="">
-    <div style="background: grey" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div style="background: grey" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h3 class="offcanvas-title" id="offcanvasRightLabel">Giỏ hàng của bạn</h3>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -142,49 +150,53 @@
 <br>
 
 <!--header-->
+
+
 <div class="header">
     <!--//chi tiết sản phẩm-->
     <div class="header-content">
         <div class="row">
             <!--        ảnh-->
-            <div class="col-xl-5 col-md-12">
-                <div class="hero-img">
-                    <img src="top7.jpg" alt="">
+                <div class="col-xl-5 col-md-12">
+                    <div class="hero-img">
+                        <img src="${product.imagesUrl}"/>
+                    </div>
                 </div>
-            </div>
-
-
-            <div class="col-xl-7 col-md-12">
-                <div class="intro-text col-md-12">
-                    <h1>Ghế Công Thái Học Manson Vera Lưới Wintex Xám Gác Chân, Lưng Nâng Hạ, Mặt Ngồi Trượt, Tay 3D,
-                        Piston 4 Cấp BIFMA</h1>
-
-                    <div class="container text-center">
-                        <div class="row">
-                            <p id="old-price">10.890.000 đ</p>
-                            <p id="new-price">7.800.000 đ</p>
+                <div class="col-xl-7 col-md-12">
+                    <div class="intro-text col-md-12">
+                        <h1>
+                            <c:out value="${product.productName}"/>
+                        </h1>
+                        <div class="container text-center">
+                            <div class="row">
+                                <p id="old-price">
+                                    <fmt:formatNumber value="${product.oldPrice}"/> đ
+                                </p>
+                                <p id="new-price">
+                                    <fmt:formatNumber value="${product.productPrice}"/> đ
+                                </p>
+                            </div>
+                        </div>
+                        <h3 id="intro">
+                            <c:out value="${product.productDescription}"/>
+                        </h3>
+                        <div class="btns">
+                            <button class="btn-primary" type="submit">
+                                Thêm vào giỏ hàng
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                            <button class="btn-primary" type="submit">
+                                Mua ngay
+                                <i class="fa-brands fa-rebel"></i>
+                                <p style="font-size: 14px; text-align: center; font-style: italic">Ship cod tại nhà toàn
+                                    quốc</p>
+                            </button>
                         </div>
                     </div>
-                    <h3 id="intro">Với cơ chế Lưng nâng hạ cải tiến của Manson Vera, lưới Wintex Hàn Quốc, phần lưng phụ
-                        độc lập giúp dễ dàng điều chỉnh linh động đến 8cm, mặt ngồi trượt 5cm, tay nâng hạ 3D và Piston
-                        4 cấp tiêu chuẩn BIFMA</h3>
-                    <div class="btns">
-                        <button class="btn-primary" type="submit">
-                            Thêm vào giỏ hàng
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </button>
-                        <button class="btn-primary" type="submit">
-                            Mua ngay
-                            <i class="fa-brands fa-rebel"></i>
-                            <p style="font-size: 14px; text-align: center; font-style: italic">Ship cod tại nhà toàn
-                                quốc</p>
-                        </button>
-                    </div>
                 </div>
-            </div>
         </div>
     </div>
-    <!--    hết-->
+        <%--        hết--%>
 </div>
 
 

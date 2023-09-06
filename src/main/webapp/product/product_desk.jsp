@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -146,7 +147,7 @@
 <!--header-->
 <div class="class-deader-product">
     <h1>Sản phẩm</h1>
-    <p>các sản phẩm bàn công thái học có mặt tại cửa hàng</p>
+    <p>các sản phẩm ghế công thái học có mặt tại cửa hàng</p>
 </div>
 
 <div class="container text-center">
@@ -155,16 +156,16 @@
             <div class="col">
                 <div class="card">
                     <div class="card-img">
-                        <img src="${product.erasing_img}"/>
+                        <img src="${product.erasingImg}"/>
                     </div>
                     <div class="card-title">
-                        <p><c:out value="${product.product_name}"/></p>
+                        <p><c:out value="${product.productName}"/></p>
                     </div>
                     <div class="card-price">
-                        <p><c:out value="${product.product_price}"/>đ</p>
+                        <p><fmt:formatNumber value="${product.productPrice}"/> đ</p>
                     </div>
                     <div class="card-action">
-                        <button type="submit">Xem chi tiết sản phẩm</button>
+                        <button type="submit" name="productId" value="${product.productId}"><a  href="/product-servlet?action=showProductDetail&productId=${product.productId}" style="text-decoration: none; color: white">Xem chi tiết sản phẩm</a></button>
                     </div>
                 </div>
             </div>

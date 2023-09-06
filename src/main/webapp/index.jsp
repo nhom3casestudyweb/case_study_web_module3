@@ -354,35 +354,56 @@
 
 
 <!--    footer-->
-<div class="class-endow">
-    <div class="class-endow-i">
-        <i class="fa-brands fa-android"></i>
-        <h3>Phương thức đổi trả</h3>
-        <hr>
-        <p>Đổi trả miễn phí trong 30 ngày</p>
+<div class="row">
+    <div class="col-md-12 col-lg-3 ">
+        <div class="class-endow">
+            <div class="class-endow-i">
+                <i class="fa-brands fa-android"></i>
+                <h3>Phương thức đổi trả</h3>
+                <hr>
+                <p>Đổi trả miễn phí trong 30 ngày</p>
+            </div>
+            <!--        i-->
+        </div>
     </div>
-    <!--        i-->
-    <div class="class-endow-i">
-        <i class="fa-solid fa-truck-fast"></i>
-        <h3>Miễn phí giao hàng</h3>
-        <hr>
-        <p>Áp dụng khi mua tại shop</p>
+
+
+
+    <div class="col-md-12 col-lg-3 ">
+        <div class="class-endow">
+            <div class="class-endow-i">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Miễn phí giao hàng</h3>
+                <hr>
+                <p>Áp dụng khi mua tại shop</p>
+            </div>
+            <!--        i-->
+        </div>
     </div>
-    <!--        i-->
-    <div class="class-endow-i">
-        <i class="fa-brands fa-shopify"></i>
-        <h3>Ưu đãi và khuyến mãi</h3>
-        <hr>
-        <p>Luôn có nhiều voucher cho bạn</p>
+
+    <div class="col-md-12 col-lg-3 ">
+        <div class="class-endow">
+            <div class="class-endow-i">
+                <i class="fa-brands fa-shopify"></i>
+                <h3>Ưu đãi và khuyến mãi</h3>
+                <hr>
+                <p>Luôn có nhiều voucher cho bạn</p>
+            </div>
+            <!--        i-->
+        </div>
     </div>
-    <!--        i-->
-    <div class="class-endow-i">
-        <i class="fa-solid fa-money-check-dollar"></i>
-        <h3>Giá cả phải chăng</h3>
-        <hr>
-        <p>Mức giá hợp lý về mọi sản phẩm</p>
+
+    <div class="col-md-12 col-lg-3 ">
+        <div class="class-endow">
+            <div class="class-endow-i">
+                <i class="fa-solid fa-money-check-dollar"></i>
+                <h3>Giá cả phải chăng</h3>
+                <hr>
+                <p>Mức giá hợp lý về mọi sản phẩm</p>
+            </div>
+            <!--        i-->
+        </div>
     </div>
-    <!--        i-->
 </div>
 
 <!--nhãn-->

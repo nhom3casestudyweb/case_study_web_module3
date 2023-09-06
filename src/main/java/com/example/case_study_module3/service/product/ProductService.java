@@ -22,4 +22,9 @@ public class ProductService implements IProductService {
     public List<Product> showListAccessories() {
         return productRepository.showListAccessories();
     }
+
+    @Override
+    public Product finById(int productId) {
+        return productRepository.finById(productId);
+    }
 }

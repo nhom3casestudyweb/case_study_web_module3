@@ -8,11 +8,7 @@
     width: 92%;
     margin: auto;
 }
-body {
-    height: 100vh;
-    background: linear-gradient(to right, grey, lightsteelblue);
-    font-family: Cambria;
-}
+
 nav {
     display: flex;
     align-items: center;
@@ -69,17 +65,11 @@ nav {
     cursor: pointer;
 }
 .btns {
-    margin: 70px;
+    margin-top: 30px;
 }
-.btns .btn-primary{
-    background: black;
-    font-size: 25px;
-    margin: 0 30px;
-    float: left;
-    height: 78px;
-}
-.btn-primary{
-    padding: 12px 17px;
+
+.btn-primary {
+    padding: 12px 20px;
     background: linear-gradient(to right, grey, black);
     border: none;
     border-radius: 12px;
@@ -92,7 +82,11 @@ nav {
 }
 
 .btn-primary:hover {
-    transform: scale(0.9);
+    background: cadetblue;
+}
+
+.nav-btns .btn-primary:hover {
+    transform: scale(0.8);
 }
 
 .btn-primary a {
@@ -227,65 +221,6 @@ nav {
 .class-ul li {
     padding: 13px;
 }
-.header-content {
-    margin-top: 50px;
-    overflow: hidden;
-    background: transparent;
-    border: 1px solid black;
-    border-radius: 50px;
-    align-items: center;
-    justify-content: center;
-}
-.hero-img {
-    flex-basis: 40%;
-    border-radius: unset;
-    transform: unset;
-    border: none;
-    overflow: hidden;
-}
-
-.hero-img img {
-    width: 100%;
-    height: 600px;
-}
-
-.intro-text h1 {
-    font-family: Candara, serif;
-    font-weight: bold;
-    font-size: 40px;
-    margin-bottom: 35px;
-}
-
-.intro-text #old-price {
-    height: 60px;
-    width: 24%;
-    background-color: rgba(120,120,120,0.1);
-    color: black;
-    text-decoration: line-through;
-    float: left;
-    text-align: center;
-    font-size: 25px;
-    bottom: 12px;
-    padding: 13px;
-}
-.intro-text #new-price {
-    width: 76%;
-    background-color: rgba(120,120,120,0.1);
-    color: #000000;
-    float: left;
-    font-size: 40px;
-    text-align: left;
-}
-#old-price #new-price{
-    border-radius: 10px;
-}
-.intro-text {
-    flex-basis: 60%;
-    padding: 20px;
-}
-.intro-text #intro{
-    font-size: 24px;
-}
 #selection-product:hover{
     transform: scale(1.1);
     transition: 0.5s;
@@ -335,10 +270,7 @@ nav {
     height: 1px;
     box-shadow: 1px 5px 6px black;
 }
-#selection-product:hover{
-    transform: scale(1.1);
-    transition: 0.5s;
-}
+
 .class-deader-product{
     text-align: center;
 }

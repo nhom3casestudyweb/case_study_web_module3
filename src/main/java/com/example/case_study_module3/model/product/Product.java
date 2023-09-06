@@ -1,97 +1,111 @@
 package com.example.case_study_module3.model.product;
 
-public class Product extends ProductImages{
-    private int product_id;
-    private String product_name;
-    private double product_price;
-    private double old_price;
-    private String product_description;
-    private int product_type_id;
-    private int product_inventory;
+public class Product extends ProductImages {
+    private int productId;
+    private String productName;
+    private double productPrice;
+    private double oldPrice;
+    private String productDescription;
+    private int productTypeId;
+    private int productInventory;
 
     public Product() {
     }
-    public Product(String product_name, double product_price, String product_description, int product_type_id, int product_inventory) {
-        this.product_name = product_name;
-        this.product_price = product_price;
-        this.product_description = product_description;
-        this.product_type_id = product_type_id;
-        this.product_inventory = product_inventory;
+
+    public Product(String productName, double productPrice, String productDescription, int productTypeId, int productInventory) {
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productDescription = productDescription;
+        this.productTypeId = productTypeId;
+        this.productInventory = productInventory;
     }
 
-    public Product(int product_id, String product_name, double product_price, double old_price, String product_description, int product_type_id, int product_inventory) {
-        this.product_id = product_id;
-        this.product_name = product_name;
-        this.product_price = product_price;
-        this.old_price = old_price;
-        this.product_description = product_description;
-        this.product_type_id = product_type_id;
-        this.product_inventory = product_inventory;
+    public Product(int productId, String productName, double productPrice, double oldPrice, String productDescription, int productTypeId, int productInventory) {
+        this.productId = productId;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.oldPrice = oldPrice;
+        this.productDescription = productDescription;
+        this.productTypeId = productTypeId;
+        this.productInventory = productInventory;
+    }
+
+    public Product(int productImagesId, String imagesUrl, String erasingImg, int productId, String productName, double productPrice, double oldPrice, String productDescription, int productTypeId, int productInventory) {
+        super(productImagesId, imagesUrl, erasingImg);
+        this.productId = productId;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.oldPrice = oldPrice;
+        this.productDescription = productDescription;
+        this.productTypeId = productTypeId;
+        this.productInventory = productInventory;
     }
 
     //contructor này được tạo ra để phục vụ cho show product
-    public Product(String images_url, String erasing_img, String product_name, double product_price, double old_price, String product_description, int product_inventory) {
-        super(images_url, erasing_img);
-        this.product_name = product_name;
-        this.product_price = product_price;
-        this.old_price = old_price;
-        this.product_description = product_description;
-        this.product_inventory = product_inventory;
+    public Product(String imagesUrl, String erasingImg, int productId, String productName, double productPrice, double oldPrice, String productDescription, int productInventory) {
+        super(imagesUrl, erasingImg);
+        this.productId = productId;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.oldPrice = oldPrice;
+        this.productDescription = productDescription;
+        this.productInventory = productInventory;
     }
 
-    public int getProduct_id() {
-        return product_id;
+
+    public int getProductId() {
+        return productId;
     }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public String getProduct_name() {
-        return product_name;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public double getProduct_price() {
-        return product_price;
+    public double getProductPrice() {
+        return productPrice;
     }
 
-    public void setProduct_price(double product_price) {
-        this.product_price = product_price;
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
     }
 
-    public double getOld_price() {
-        return old_price;
+    public double getOldPrice() {
+        return oldPrice;
     }
 
-    public void setOld_price(double old_price) {
-        this.old_price = old_price;
+    public void setOldPrice(double oldPrice) {
+        this.oldPrice = oldPrice;
     }
 
-    public String getProduct_description() {
-        return product_description;
+    public String getProductDescription() {
+        return productDescription;
     }
 
-    public void setProduct_description(String product_description) {
-        this.product_description = product_description;
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
     }
 
-    public int getProduct_type_id() {
-        return product_type_id;
+    public int getProductTypeId() {
+        return productTypeId;
     }
 
-    public void setProduct_type_id(int product_type_id) {
-        this.product_type_id = product_type_id;
+    public void setProductTypeId(int productTypeId) {
+        this.productTypeId = productTypeId;
     }
 
-    public int getProduct_inventory() {
-        return product_inventory;
+    public int getProductInventory() {
+        return productInventory;
     }
 
-    public void setProduct_inventory(int product_inventory) {
-        this.product_inventory = product_inventory;
+    public void setProductInventory(int productInventory) {
+        this.productInventory = productInventory;
     }
 }
