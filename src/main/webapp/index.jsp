@@ -12,7 +12,12 @@
           crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="home_page2.css">
+=======
+    <link rel="stylesheet" href="css/home_page2.css">
+    <link rel="stylesheet" href="css/cart.css">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
 </head>
 <body>
 <div class="header">
@@ -21,7 +26,11 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <!--        logo wed-->
         <div class="logo">
+<<<<<<< HEAD
             <img src="images/logo.png">
+=======
+            <img src="home_img/logo.png">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -34,26 +43,32 @@
                     <li><a href="index.jsp">Trang chủ</a></li>
 
                     <li>
-                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                           aria-controls="offcanvasExample">
                             Sản phẩm
                         </a>
                     </li>
 
+<<<<<<< HEAD
                     <li>
                         <a href="/profile_card/profilecard.jsp" target="_blank">Liên hệ</a>
                     </li>
                     <li>
                         <a href="product-servlet?action=showFormCreate">Thêm mới sản phẩm</a>
                     </li>
+=======
+                    <li><a href="/profilecard.jsp" target="_blank">Liên hệ</a></li>
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                 </div>
 
                 <div class="nav-btns">
                     <!--                   đăng nhập-->
                     <button class="btn-primary" type="submit"><a
-                            href="/login/login.jsp">Đăng
+                            href="/login.jsp">Đăng
                         nhập</a></button>
 
                     <!--                     tìm kiếm-->
+<<<<<<< HEAD
                     <div class="search-box">
                         <input class="search-box-input" type="search" placeholder="Tìm tên sản phẩm...">
                         <button class="search-box-btn" type="submit">
@@ -63,8 +78,44 @@
 
                     <!--                          giỏ hàng-->
                     <button class="search-box-cart">
+=======
+                    <form action="/product-servlet?action=search" method="post">
+                        <div class="search-box">
+                            <input name="product_name" id="product_name" list="topics" class="search-box-input" type="search"
+                                   placeholder="Tìm tên sản phẩm...">
+                            <datalist id="topics">
+                                <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
+                                <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng">
+                                <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen">
+                                <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic">
+                                <option value="Bàn SMARTDESK GAMING">
+                                <option value="Bàn SMARTDESK GAMING BLACK PC">
+                                <option value="Bàn SMARTDESK STUDIO PRO">
+                                <option value="Bàn SMARTDESK STUDIO PIANO">
+                                <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
+                                <option value="Giá Treo CPU Buddy">
+                            </datalist>
+                            <button type="button" class="search-box-btn">
+                                <i class='bx bx-search-alt'></i>
+                            </button>
+                        </div>
+                    </form>
+
+
+                    <!--                          giỏ hàng-->
+                    <button class="search-box-cart" class="btn btn-primary" type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                            class="btn position-relative">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                         <i class="fa-solid fa-cart-plus"></i>
+                        <span style="margin: 81px -10px;font-size: 11px;" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0
+                    <span class="visually-hidden">unread messages</span>
+                        </span>
                     </button>
+
+
                 </div>
             </ul>
         </div>
@@ -87,14 +138,20 @@
                 cung cấp các dịch vụ và trải nghiệm tuyệt vời nhất cho khách hàng về sản phẩm tại shop
             </div>
             <div class="dropdown mt-3">
-                <button id="selection-product" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                <button id="selection-product" class="btn btn-secondary dropdown-toggle" type="button"
+                        data-bs-toggle="dropdown">
                     Xem sản phẩm của shop tại đây
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế công thái học</a></li>
-                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn công thái học</a></li>
-                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế
+                        công thái học</a></li>
+                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn
+                        công thái học</a></li>
+                    <li><a style="font-weight: bold" class="dropdown-item"
+                           href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
                     <li><a style="font-weight: bold" class="dropdown-item" href="#">
                         Sản phẩm HOT
                         <i class="fa-solid fa-fire"></i>
@@ -105,6 +162,32 @@
     </div>
     <!--    hết-->
 
+<<<<<<< HEAD
+=======
+    <!--    menu giỏ hàng-->
+    <form action="" method="">
+        <div style="background: grey" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+             aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h3 class="offcanvas-title" id="offcanvasRightLabel">Giỏ hàng của bạn</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                Giỏ hàng của bạn đang trống !
+            </div>
+            <hr>
+            <div class="price-product">
+                <h4 class="total-price">Tổng tiền</h4>
+                <h4 class="price">0 đ</h4>
+            </div>
+            <p style="font-size: 13px; margin: 19px 14px">Phí vận chuyển sẽ được tính khi bạn thanh toán sản phẩm</p>
+            <button class="buy-product" type="submit">
+                Thanh Toán
+            </button>
+        </div>
+    </form>
+    <!--    hết-->
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
 
     <!--//header2-->
     <div class="header-content">
@@ -114,7 +197,9 @@
                     <h1>Thưởng thức sự tiện nghi</h1>
                     <p>Sự kết hợp mới mẻ</p>
                     <div class="btns">
-                        <button class="btn-primary" style="width: 150px; font-size: 23px" onclick="introFunction()" id="start" title="Go to top">Bắt đầu</button>
+                        <button class="btn-primary" style="width: 150px; font-size: 23px" onclick="introFunction()"
+                                id="start" title="Go to top">Bắt đầu
+                        </button>
                     </div>
                 </div>
             </div>
@@ -125,42 +210,70 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="hero-img">
+<<<<<<< HEAD
                                 <img src="images/header10.jpg" alt="">
+=======
+                                <img src="home_img/header10.jpg" alt="">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
+<<<<<<< HEAD
                                 <img src="images/header6.png" alt="">
+=======
+                                <img src="home_img/header6.png" alt="">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
+<<<<<<< HEAD
                                 <img src="images/header7.jpg" alt="">
+=======
+                                <img src="home_img/header7.jpg" alt="">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
+<<<<<<< HEAD
                                 <img src="images/header8.png" alt="">
+=======
+                                <img src="home_img/header8.png" alt="">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
+<<<<<<< HEAD
                                 <img src="images/header9.jpg" alt="">
+=======
+                                <img src="home_img/header9.jpg" alt="">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
+<<<<<<< HEAD
                                 <img src="images/header5.jpg" alt="">
+=======
+                                <img src="home_img/header5.jpg" alt="">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
+<<<<<<< HEAD
                                 <img src="images/header11.jpg" alt="">
+=======
+                                <img src="home_img/header11.jpg" alt="">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="hero-img">
-                                <img src="header12.jpg" alt="">
+                                <img src="home_img/header12.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -224,7 +337,11 @@
         <div class="col-md-12 col-xl-6">
             <!--        hình ảnh mô tả-->
             <div class="content-img">
+<<<<<<< HEAD
                 <img src="images/header1.jpg" alt="">
+=======
+                <img src="home_img/header1.jpg" alt="">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
             </div>
         </div>
     </div>
@@ -258,49 +375,77 @@
     </div>
     <div class="carousel-inner" id="text">
         <div class="carousel-item active">
+<<<<<<< HEAD
             <img src="images/top8.jpg" class="d-block w-100" alt="...">
+=======
+            <img src="home_img/top8.jpg" class="d-block w-100" alt="...">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
             <div class="carousel-caption d-none d-md-block">
                 <h3 class="text">Ergochair pro 1 Gray</h3>
                 <p class="text">Đã bán 103 ghế</p>
             </div>
         </div>
         <div class="carousel-item">
+<<<<<<< HEAD
             <img src="images/top1.jpg" class="d-block w-100" alt="...">
+=======
+            <img src="home_img/top1.jpg" class="d-block w-100" alt="...">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text">Ergochair Pro 2</h5>
                 <p class="text">Đã bán 194 ghế</p>
             </div>
         </div>
         <div class="carousel-item">
+<<<<<<< HEAD
             <img src="images/top3.jpg" class="d-block w-100" alt="...">
+=======
+            <img src="home_img/top3.jpg" class="d-block w-100" alt="...">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text">KD-09</h5>
                 <p class="text">Đã bán 123 ghế</p>
             </div>
         </div>
         <div class="carousel-item">
+<<<<<<< HEAD
             <img src="images/topp4jpg.jpg" class="d-block w-100" alt="...">
+=======
+            <img src="home_img/topp4jpg.jpg" class="d-block w-100" alt="...">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text">ERGOHUMAN PLATINUM</h5>
                 <p class="text">Đã bán 201 ghế</p>
             </div>
         </div>
         <div class="carousel-item">
+<<<<<<< HEAD
             <img src="images/header3.webp" class="d-block w-100" alt="...">
+=======
+            <img src="home_img/header3.webp" class="d-block w-100" alt="...">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text">ERGONOMIC E6</h5>
                 <p class="text">Đã bán 163 bàn</p>
             </div>
         </div>
         <div class="carousel-item">
+<<<<<<< HEAD
             <img src="images/top6.jpg" class="d-block w-100" alt="...">
+=======
+            <img src="home_img/top6.jpg" class="d-block w-100" alt="...">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
             <div class="carousel-caption d-none d-md-block">
                 <h5 style="color: black">SMARTDESK GAMING WHITE BLACK PC</h5>
                 <p style="color: black">Đã bán 351 bàn</p>
             </div>
         </div>
         <div class="carousel-item">
+<<<<<<< HEAD
             <img src="images/top7.jpg" class="d-block w-100" alt="...">
+=======
+            <img src="home_img/top7.jpg" class="d-block w-100" alt="...">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
             <div class="carousel-caption d-none d-md-block">
                 <h5 class="text">Ergochair Pro 3</h5>
                 <p class="text">Đã bán 122 ghế</p>
@@ -320,37 +465,56 @@
 <br>
 
 
-
 <!--    footer-->
-<div class="class-endow">
-    <div class="class-endow-i">
-        <i class="fa-brands fa-android"></i>
-        <h3>Phương thức đổi trả</h3>
-        <hr>
-        <p>Đổi trả miễn phí trong 30 ngày</p>
+<div class="row">
+    <div class="col-md-12 col-lg-3 ">
+        <div class="class-endow">
+            <div class="class-endow-i">
+                <i class="fa-brands fa-android"></i>
+                <h3>Phương thức đổi trả</h3>
+                <hr>
+                <p>Đổi trả miễn phí trong 30 ngày</p>
+            </div>
+            <!--        i-->
+        </div>
     </div>
-    <!--        i-->
-    <div class="class-endow-i">
-        <i class="fa-solid fa-truck-fast"></i>
-        <h3>Miễn phí giao hàng</h3>
-        <hr>
-        <p>Áp dụng khi mua tại shop</p>
+
+
+    <div class="col-md-12 col-lg-3 ">
+        <div class="class-endow">
+            <div class="class-endow-i">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Miễn phí giao hàng</h3>
+                <hr>
+                <p>Áp dụng khi mua tại shop</p>
+            </div>
+            <!--        i-->
+        </div>
     </div>
-    <!--        i-->
-    <div class="class-endow-i">
-        <i class="fa-brands fa-shopify"></i>
-        <h3>Ưu đãi và khuyến mãi</h3>
-        <hr>
-        <p>Luôn có nhiều voucher cho bạn</p>
+
+    <div class="col-md-12 col-lg-3 ">
+        <div class="class-endow">
+            <div class="class-endow-i">
+                <i class="fa-brands fa-shopify"></i>
+                <h3>Ưu đãi và khuyến mãi</h3>
+                <hr>
+                <p>Luôn có nhiều voucher cho bạn</p>
+            </div>
+            <!--        i-->
+        </div>
     </div>
-    <!--        i-->
-    <div class="class-endow-i">
-        <i class="fa-solid fa-money-check-dollar"></i>
-        <h3>Giá cả phải chăng</h3>
-        <hr>
-        <p>Mức giá hợp lý về mọi sản phẩm</p>
+
+    <div class="col-md-12 col-lg-3 ">
+        <div class="class-endow">
+            <div class="class-endow-i">
+                <i class="fa-solid fa-money-check-dollar"></i>
+                <h3>Giá cả phải chăng</h3>
+                <hr>
+                <p>Mức giá hợp lý về mọi sản phẩm</p>
+            </div>
+            <!--        i-->
+        </div>
     </div>
-    <!--        i-->
 </div>
 
 <!--nhãn-->
@@ -381,6 +545,7 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
+
     function introFunction() {
         document.body.scrollTop = 780;
         document.documentElement.scrollTop = 780;
