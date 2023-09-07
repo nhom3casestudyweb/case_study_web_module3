@@ -13,7 +13,7 @@
 <body>
 <div class="container-fluid">
     <div class="container" style="text-align: center ; margin: 6% ;margin-top: 50px ;background: #bb2d3b" >
-        <form method="post" action="product-servlet?action=createProduct">
+        <form method="post" action="/product-servlet?action=createProduct">
             <br><br>
             <h1>Thêm mới sản phẩm</h1>
             <br><br>
@@ -62,4 +62,9 @@
     </div>
 </div>
 </body>
+
+<script>
+
+
+</script>
 </html>

@@ -14,18 +14,19 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
-    body{
+    body {
         background: linear-gradient(to right, lightblue, #d2b397);
     }
 </style>
 <body>
+<div class="content-fluid">
     <div class="content">
-        <div class="row">
-            <button style="background: none;text-align: center ; margin: 5px"><h1>SỬA THÔNG TIN SẢN PHẨM</h1></button>
+           <div style="text-align: center; margin-top: 15px">
+               <button style="background: none;text-align: center ; margin: 5px"><h1>SỬA THÔNG TIN SẢN PHẨM</h1></button></div>
             <form method="post" action="/product-servlet?action=editProduct&code=${product.product_id}"
                   style="display: flex">
                 <div class="col-md-6" style="text-align: center ">
-                    <img src="/images/${product.images_url}" style="margin: 5%;">
+                    <img src="images/${product.images_url}" style="margin: 5%;">
                     <p style="padding: 10px;">${product.product_description}</p>
                 </div>
                 <div style="margin: 2%">
@@ -36,10 +37,13 @@
                     <div style="padding-left: 10px">
                         <br>
                         <div>
-                            <h4>Tên sản phẩm : <input value="${product.product_name}" name="product_name" id="product_name"></h4><br>
+                            <h4>Tên sản phẩm : <input value="${product.product_name}" name="product_name"
+                                                      id="product_name" required maxlength="1000" minlength="10"
+                                                      type="text"></h4><br>
                         </div>
                         <div>
-                            <h4>Giá sản phẩm : <input value="${product.product_price}" name="price" id="price"></h4><br>
+                            <h4>Giá sản phẩm : <input value="${product.product_price}" type="number" name="price"
+                                                      id="price" min="5" max="100000000" required></h4><br>
                         </div>
                         <div style="display: flex">
                             <h4>Loại sản phẩm : &nbsp</h4>
@@ -51,17 +55,18 @@
                         </div>
                         <br>
                         <div>
-                            <h4>Số lượng sản phẩm : &nbsp <input value="${product.product_inventory}" style="width: 100px"
-                             name="product_inventory" id="product_inventory"></h4>
+                            <h4>Số lượng sản phẩm : &nbsp <input value="${product.product_inventory}"
+                                                                 style="width: 100px"
+                                                                 name="product_inventory" id="product_inventory"></h4>
                         </div>
                         <div style="display: flex ; padding-top: 20%">
                             <div style="padding-left: 22% ; font-size: 150%">
                                 <button style="background: blue ; border-radius: 10px">
-                                    <a href="/product-servlet" style="text-decoration: none ; color: black">Thoát</a>
+                                    <a href="product-servlet" style="text-decoration: none ; color: azure">Thoát</a>
                                 </button>
                             </div>
                             <div style="padding-left: 40% ; font-size: 170%">
-                                <button type="submit" style="background: brown ; border-radius: 10px">
+                                <button type="submit" style="background: brown ; border-radius: 10px ; width: 80px ; height: 42px">
                                     Sửa
                                 </button>
                             </div>
@@ -70,8 +75,8 @@
                     </div>
                 </div>
             </form>
-        </div>
     </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

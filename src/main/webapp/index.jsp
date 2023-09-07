@@ -43,7 +43,7 @@
                         <a href="/profile_card/profilecard.jsp" target="_blank">Liên hệ</a>
                     </li>
                     <li>
-                        <a href="/product-servlet?action=showFormCreate">Thêm mới sản phẩm</a>
+                        <a href="product-servlet?action=showFormCreate">Thêm mới sản phẩm</a>
                     </li>
                 </div>
 
