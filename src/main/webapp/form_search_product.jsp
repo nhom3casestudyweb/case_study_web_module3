@@ -17,7 +17,7 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link rel="stylesheet" href="/css/product_accessories.css">
+    <link rel="stylesheet" href="/css/product_desk.css">
     <link rel="stylesheet" href="/css/cart.css">
 </head>
 <body>
@@ -74,6 +74,7 @@
                             </button>
                         </div>
                     </form>
+
 
 
                     <!--                          giỏ hàng-->
@@ -150,17 +151,16 @@
 <!--header-->
 <div class="class-deader-product">
     <h1>Sản phẩm</h1>
-    <p>các phụ kiện công thái học có mặt tại cửa hàng</p>
+    <p>các sản tìm được tại shop</p>
 </div>
 
 <div class="container text-center">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-        <c:forEach var="product" items="${listAccessories}">
+        <c:forEach var="product" items="${productList}">
             <div class="col">
                 <div class="card">
                     <div class="card-img">
                         <img src="/erasing_img_product/${product.erasingImg}"/>
-
                     </div>
                     <div class="card-title">
                         <p><c:out value="${product.productName}"/></p>

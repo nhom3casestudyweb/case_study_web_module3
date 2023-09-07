@@ -10,4 +10,5 @@ public interface IProductService {
     List<Product> showListDesk();
     List<Product> showListAccessories();
     Product finById(int productId);
+    List<Product> findByName(String searchName);
 }

@@ -27,3 +27,6 @@
 .price-product{
     margin: 19px 14px;
 }
+#log-out i:hover{
+    transform: scale(0.9);
+}

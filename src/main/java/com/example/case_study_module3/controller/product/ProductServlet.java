@@ -27,6 +27,7 @@ public class ProductServlet extends HttpServlet {
             case "showFormUpdate":
                 break;
             case "showFormSearch":
+                showFormSearch(request,response);
                 break;
             case "showListChair":
                 showListChair(request, response);
@@ -40,6 +41,16 @@ public class ProductServlet extends HttpServlet {
             case "showProductDetail":
                 showProductDetail(request, response);
                 break;
+            default:
+        }
+    }
+
+    private void showFormSearch(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/form_search_jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -96,6 +107,21 @@ public class ProductServlet extends HttpServlet {
         if (action == null) {
             action = "";
         }
+        switch (action){
+            case "search":
+                searchByName(request,response);
+        }
+    }
 
+    private void searchByName(HttpServletRequest request, HttpServletResponse response) {
+        String productName = request.getParameter("product_name");
+        List<Product> productList = productService.findByName(productName);
+        request.setAttribute("productList",productList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/form_search_product.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

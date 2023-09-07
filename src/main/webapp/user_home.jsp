@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,53 +46,72 @@
                 </div>
 
                 <div class="nav-btns">
-                    <!--                   đăng nhập-->
-                    <button class="btn-primary" type="submit"><a
-                            href="/login.jsp">Đăng
-                        nhập</a></button>
 
-                    <!--                     tìm kiếm-->
-                    <form action="/product-servlet?action=search" method="post">
-                        <div class="search-box">
-                            <input name="product_name" id="product_name" list="topics" class="search-box-input" type="search"
-                                   placeholder="Tìm tên sản phẩm...">
-                            <datalist id="topics">
-                                <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
-                                <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng">
-                                <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen">
-                                <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic">
-                                <option value="Bàn SMARTDESK GAMING">
-                                <option value="Bàn SMARTDESK GAMING BLACK PC">
-                                <option value="Bàn SMARTDESK STUDIO PRO">
-                                <option value="Bàn SMARTDESK STUDIO PIANO">
-                                <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
-                                <option value="Giá Treo CPU Buddy">
-                            </datalist>
-                            <button type="button" class="search-box-btn">
-                                <i class='bx bx-search-alt'></i>
-                            </button>
-                        </div>
-                    </form>
+                    <%--          tên user--%>
+                        <p style="border: 1px solid; border-radius: 10px; padding: 15px;margin: 10px;top: 11px;cursor: default">
+                            <c:out value="${account.userName}"/>
+                            <a data-bs-toggle="modal"
+                               data-bs-target="#exampleModal">
+                                <i id="log-out" style="cursor: pointer;font-size: 30px; margin: 5px 7px;" class="fa-solid fa-right-from-bracket"></i>
+                            </a>
+                        </p>
 
+                        <!--                     tìm kiếm-->
+                        <form action="/product-servlet?action=search" method="post">
+                            <div class="search-box">
+                                <input name="product_name" id="product_name" list="topics" class="search-box-input" type="search"
+                                       placeholder="Tìm tên sản phẩm...">
+                                <datalist id="topics">
+                                    <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
+                                    <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng">
+                                    <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen">
+                                    <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic">
+                                    <option value="Bàn SMARTDESK GAMING">
+                                    <option value="Bàn SMARTDESK GAMING BLACK PC">
+                                    <option value="Bàn SMARTDESK STUDIO PRO">
+                                    <option value="Bàn SMARTDESK STUDIO PIANO">
+                                    <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
+                                    <option value="Giá Treo CPU Buddy">
+                                </datalist>
+                                <button type="button" class="search-box-btn">
+                                    <i class='bx bx-search-alt'></i>
+                                </button>
+                            </div>
+                        </form>
 
                     <!--                          giỏ hàng-->
-                    <button class="search-box-cart" class="btn btn-primary" type="button"
+                    <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"
                             data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
-                            class="btn position-relative">
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fa-solid fa-cart-plus"></i>
-                        <span style="margin: 81px -10px;font-size: 11px;" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    0
-                    <span class="visually-hidden">unread messages</span>
-                        </span>
                     </button>
-
-
                 </div>
             </ul>
         </div>
     </nav>
     <!--    hết-->
+
+
+    <%--modal đăng xuất--%>
+    <div class="modal" tabindex="-1" id="exampleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="index.jsp">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden">
+                        <span class="text-danger">Bạn có chắc chắn muốn đăng xuất không ?</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <button type="submit" class="btn btn-primary">Đăng xuất</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
     <!--    danh sách option sản phẩm-->

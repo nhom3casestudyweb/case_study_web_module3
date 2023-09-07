@@ -52,24 +52,28 @@
                             href="/login.jsp">Đăng
                         nhập</a></button>
 
-                    <div class="search-box">
-                        <input list="topics" class="search-box-input" type="text" placeholder="Tìm tên sản phẩm...">
-                        <datalist id="topics">
-                            <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
-                            <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng - Phiên Bản Hợp Kim Phủ Nano, Manson FR-09">
-                            <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen, Lưng Nâng Hạ, Mặt Ngồi Trượt, Tay 3D, Piston 4 Cấp BIFMA">
-                            <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic - Trắng">
-                            <option value="Bàn SMARTDESK GAMING">
-                            <option value="Bàn SMARTDESK GAMING BLACK PC">
-                            <option value="Bàn SMARTDESK STUDIO PRO">
-                            <option value="Bàn SMARTDESK STUDIO PIANO">
-                            <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
-                            <option value="Giá Treo CPU Buddy">
-                        </datalist>
-                        <button type="submit" class="search-box-btn">
-                            <i class='bx bx-search-alt'></i>
-                        </button>
-                    </div>
+                    <!--                     tìm kiếm-->
+                    <form action="/product-servlet?action=search" method="post">
+                        <div class="search-box">
+                            <input name="product_name" id="product_name" list="topics" class="search-box-input" type="search"
+                                   placeholder="Tìm tên sản phẩm...">
+                            <datalist id="topics">
+                                <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
+                                <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng">
+                                <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen">
+                                <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic">
+                                <option value="Bàn SMARTDESK GAMING">
+                                <option value="Bàn SMARTDESK GAMING BLACK PC">
+                                <option value="Bàn SMARTDESK STUDIO PRO">
+                                <option value="Bàn SMARTDESK STUDIO PIANO">
+                                <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
+                                <option value="Giá Treo CPU Buddy">
+                            </datalist>
+                            <button type="button" class="search-box-btn">
+                                <i class='bx bx-search-alt'></i>
+                            </button>
+                        </div>
+                    </form>
 
 
 
@@ -156,7 +160,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-img">
-                        <img src="/erasing_img_product/desk/${product.erasingImg}"/>
+                        <img src="/erasing_img_product/${product.erasingImg}"/>
                     </div>
                     <div class="card-title">
                         <p><c:out value="${product.productName}"/></p>
