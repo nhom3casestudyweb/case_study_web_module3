@@ -27,3 +27,13 @@
 .price-product{
     margin: 19px 14px;
 }
+.edit-user{
+    margin: 0 auto;
+    width: 465px;
+    color: white;
+    background: burlywood;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 13px;
+    padding: 34px 11px;
+    box-shadow: 4px 5px 5px black;
+}

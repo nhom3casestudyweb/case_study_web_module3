@@ -18,6 +18,7 @@ public class CustomerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -32,10 +33,6 @@ public class CustomerServlet extends HttpServlet {
                     break;
                 case "customerChangeInfo":
                     customerChangeInfo(request, response);
-                case "delete":
-                    showDeleteForm(request, response);
-                    break;
-
                 default:
                     listUser(request, response);
                     break;
@@ -48,16 +45,7 @@ public class CustomerServlet extends HttpServlet {
     private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         List<Customer> customerList = customerService.selectAllCustomer();
         request.setAttribute("customerList", customerList);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("customer/list.jsp");
-        requestDispatcher.forward(request, response);
-    }
-
-    private void showDeleteForm(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Customer customer = customerService.selectCustomer(id);
-        RequestDispatcher requestDispatcher;
-        request.setAttribute("customer", customer);
-        requestDispatcher = request.getRequestDispatcher("customer/delete.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/user_management.jsp");
         requestDispatcher.forward(request, response);
     }
 
@@ -73,7 +61,7 @@ public class CustomerServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Customer customer = customerService.selectCustomer(id);
         request.setAttribute("customer", customer);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("customer/edit.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("edit_user.jsp");
         requestDispatcher.forward(request, response);
     }
 
@@ -84,6 +72,7 @@ public class CustomerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
         if (action == null) {
             action = "";
@@ -135,7 +124,7 @@ public class CustomerServlet extends HttpServlet {
         customerService.removeUser(id);
         List<Customer> customerList = customerService.selectAllCustomer();
         request.setAttribute("customerList", customerList);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("customer/list.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("user_management.jsp");
         requestDispatcher.forward(request, response);
     }
 

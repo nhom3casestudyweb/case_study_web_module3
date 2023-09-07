@@ -127,7 +127,17 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
+            <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="nav-links">
+                    <li>
+                        <a href="/customer">Quản lí người dùng</a>
+                    </li>
+                    <li>
+                        <a href="">Quản lí Sản phẩm</a>
+                    </li>
+                </div>
 
+            </ul>
         </div>
     </div>
     <%--    hết--%>
