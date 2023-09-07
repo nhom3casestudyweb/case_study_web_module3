@@ -22,4 +22,29 @@ public class ProductService implements IProductService {
     public List<Product> showListAccessories() {
         return productRepository.showListAccessories();
     }
+
+    @Override
+    public List<Product> showListProduct() {
+        return productRepository.showListProduct();
+    }
+
+    @Override
+    public void deleteProduct(int id) {
+        productRepository.deleteProduct(id);
+    }
+
+    @Override
+    public Product editProduct(int idProduct) {
+        return productRepository.editProduct(idProduct);
+    }
+
+    @Override
+    public void editProducts(int productId, String productNam, double productPrice, int productType, int productInventory) {
+        productRepository.editProducts(productId,productNam,productPrice,productType,productInventory);
+    }
+
+    @Override
+    public void createProduct(String productName, int productPrice, String productDescription, int productType, int productInventory) {
+        productRepository.createProduct(productName,productPrice,productDescription,productType,productInventory);
+    }
 }

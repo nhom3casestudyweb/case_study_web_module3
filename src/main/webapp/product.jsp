@@ -16,14 +16,13 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link rel="stylesheet" href="/product/product_desk.css">
-    <link rel="stylesheet" href="/cart.css">
+    <link rel="stylesheet" href="product.css">
 </head>
 <body>
 <div class="header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="logo ">
-            <img src="logo_pixian.png"
+            <img src="images/logo_pixian.png"
                  alt="">
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -50,33 +49,14 @@
                     <button class="btn-primary"><a
                             href="/login/login.jsp">Đăng
                         nhập</a></button>
-
                     <div class="search-box">
-                        <input list="topics" class="search-box-input" type="text" placeholder="Tìm tên sản phẩm...">
-                        <datalist id="topics">
-                            <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
-                            <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng - Phiên Bản Hợp Kim Phủ Nano, Manson FR-09">
-                            <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen, Lưng Nâng Hạ, Mặt Ngồi Trượt, Tay 3D, Piston 4 Cấp BIFMA">
-                            <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic - Trắng">
-                            <option value="Bàn SMARTDESK GAMING">
-                            <option value="Bàn SMARTDESK GAMING BLACK PC">
-                            <option value="Bàn SMARTDESK STUDIO PRO">
-                            <option value="Bàn SMARTDESK STUDIO PIANO">
-                            <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
-                            <option value="Giá Treo CPU Buddy">
-                        </datalist>
-                        <button type="submit" class="search-box-btn">
+                        <input class="search-box-input" type="search" placeholder="Tìm tên sản phẩm...">
+                        <button class="search-box-btn" type="submit">
                             <i class='bx bx-search-alt'></i>
                         </button>
                     </div>
-
-
-
-                    <!--                          giỏ hàng-->
-                    <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                        <i class="fa-solid fa-cart-plus"></i>
+                    <button class="search-box-cart">
+                        <i class='bx bx-cart-add'></i>
                     </button>
                 </div>
             </ul>
@@ -104,8 +84,8 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế công thái học</a></li>
-                <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn công thái học</a></li>
-                <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
+                <li><a style="font-weight: bold" class="dropdown-item" href="#">Bàn công thái học</a></li>
+                <li><a style="font-weight: bold" class="dropdown-item" href="#">Phụ kiện công thái học</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a style="font-weight: bold" class="dropdown-item" href="#">
                     Sản phẩm HOT
@@ -116,47 +96,50 @@
     </div>
 </div>
 <!--    hết-->
-
-<!--    menu giỏ hàng-->
-<form action="" method="">
-    <div style="background: grey" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h3 class="offcanvas-title" id="offcanvasRightLabel">Giỏ hàng của bạn</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            Giỏ hàng của bạn đang trống !
-        </div>
-        <hr>
-        <div class="price-product">
-            <h4 class="total-price">Tổng tiền</h4>
-            <h4 class="price">0 đ</h4>
-        </div>
-        <p style="font-size: 13px; margin: 19px 14px">Phí vận chuyển sẽ được tính khi bạn thanh toán sản phẩm</p>
-        <button class="buy-product" type="submit">
-            Thanh Toán
-        </button>
-    </div>
-</form>
-<!--    hết-->
-
 <div class="none"></div>
 <br>
 
 <!--header-->
 <div class="class-deader-product">
     <h1>Sản phẩm</h1>
-    <p>các sản phẩm bàn công thái học có mặt tại cửa hàng</p>
+    <p>các sản phẩm ghế công thái học có mặt tại cửa hàng</p>
 </div>
+
+<%--<c:forEach var="product" items="${listChair}">--%>
+<%--    <div class="card">--%>
+<%--        <div class="card-heart">--%>
+<%--            <i class='bx bxs-heart'></i>--%>
+<%--        </div>--%>
+<%--        <div class="card-cart">--%>
+<%--            <i class='bx bxs-cart'></i>--%>
+<%--        </div>--%>
+<%--        <div class="card-img">--%>
+<%--            <img src="ghecongthaihoc.png"/></div>--%>
+<%--        <div class="card-title">--%>
+<%--            <p><c:out value="${product.product_name}"/></p>--%>
+<%--        </div>--%>
+<%--        <div class="card-price">--%>
+<%--            <p><c:out value="${product.product_price}"/></p>--%>
+<%--        </div>--%>
+<%--        <div class="card-action">--%>
+<%--            <button>Xem chi tiết sản phẩm</button>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</c:forEach>--%>
 
 <div class="container text-center">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-        <c:forEach var="product" items="${listDesk}">
+        <c:forEach var="product" items="${listChair}">
             <div class="col">
                 <div class="card">
-                    <div class="card-img">
-                        <img src="${product.erasing_img}"/>
+                    <div class="card-heart">
+                        <i class='bx bxs-heart'></i>
                     </div>
+                    <div class="card-cart">
+                        <i class='bx bxs-cart'></i>
+                    </div>
+                    <div class="card-img">
+                        <img src="images/ghecongthaihoc.png"/></div>
                     <div class="card-title">
                         <p><c:out value="${product.product_name}"/></p>
                     </div>
@@ -164,7 +147,7 @@
                         <p><c:out value="${product.product_price}"/>đ</p>
                     </div>
                     <div class="card-action">
-                        <button type="submit">Xem chi tiết sản phẩm</button>
+                        <button>Xem chi tiết sản phẩm</button>
                     </div>
                 </div>
             </div>

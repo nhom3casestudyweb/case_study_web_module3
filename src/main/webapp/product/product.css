@@ -11,14 +11,13 @@ body {
 }
 
 p, h3 {
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     color: black;
     font-weight: bold;
 }
 
 .card {
-    margin: 52px auto;
     width: 300px;
     height: 380px;
     background: darkgrey;
@@ -26,6 +25,7 @@ p, h3 {
     padding: 20px;
     color: paleturquoise;
     position: relative;
+    margin-top: 85px;
 }
 
 .card-heart, .card-cart {
@@ -42,15 +42,15 @@ p, h3 {
 }
 
 .card-img {
-    height: 69%;
-    width: 132%;
-    margin-left: -16%;
+    height: 83%;
+    width: 83%;
+    margin-left: 15%;
     transition: 1s;
 }
 
 .card-img img {
-    width: 76%;
-    height: 93%;
+    width: 63%;
+    height: 100%;
     object-fit: cover;
     margin-bottom: 30px;
 }
@@ -80,7 +80,7 @@ p, h3 {
 }
 
 .card:hover .card-img {
-    transform: translateY(-90px) rotate(-1deg);
+    transform: translateY(-90px) rotate(-10deg);
 }
 
 .card:hover .card-title {
@@ -102,15 +102,12 @@ p, h3 {
 .card:hover .card-action {
     visibility: visible;
     opacity: 100;
-    margin-top: -64px;
+    margin-top: -40px;
 }
 .card-price{
     margin-top: -23px;
 }
-#selection-product:hover{
-    transform: scale(1.1);
-    transition: 0.5s;
-}
+
 .card-title, .card-price {
     transition: 1s;
 }

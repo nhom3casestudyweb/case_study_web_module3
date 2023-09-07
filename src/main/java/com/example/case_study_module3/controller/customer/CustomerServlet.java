@@ -1,4 +1,4 @@
-package com.example.case_study_group3.controller.customer;
+package com.example.case_study_module3.controller.customer;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
