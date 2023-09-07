@@ -1,5 +1,15 @@
 package com.example.case_study_module3.model.product;
 
+<<<<<<< HEAD
+public class Product {
+    private int product_id;
+    private String product_name;
+    private double product_price;
+    private String product_description;
+    private int product_type_id;
+    private int product_inventory;
+    private String images_url;
+=======
 public class Product extends ProductImages {
     private int productId;
     private String productName;
@@ -8,10 +18,46 @@ public class Product extends ProductImages {
     private String productDescription;
     private int productTypeId;
     private int productInventory;
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
 
     public Product() {
     }
 
+<<<<<<< HEAD
+    public Product(int product_id, String product_name, double product_price, String product_description, int product_type_id, int product_inventory, String images_url) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.product_price = product_price;
+        this.product_description = product_description;
+        this.product_type_id = product_type_id;
+        this.product_inventory = product_inventory;
+        this.images_url = images_url;
+    }
+
+    public Product(String product_name, double product_price, String product_description, int product_type_id, int product_inventory) {
+        this.product_name = product_name;
+        this.product_price = product_price;
+        this.product_description = product_description;
+        this.product_type_id = product_type_id;
+        this.product_inventory = product_inventory;
+    }
+
+    public Product(int product_id, String product_name, double product_price, String product_description, int product_type_id, int product_inventory) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.product_price = product_price;
+        this.product_description = product_description;
+        this.product_type_id = product_type_id;
+        this.product_inventory = product_inventory;
+    }
+
+    public String getImages_url() {
+        return images_url;
+    }
+
+    public void setImages_url(String images_url) {
+        this.images_url = images_url;
+=======
     public Product(String productName, double productPrice, String productDescription, int productTypeId, int productInventory) {
         this.productName = productName;
         this.productPrice = productPrice;
@@ -50,6 +96,7 @@ public class Product extends ProductImages {
         this.oldPrice = oldPrice;
         this.productDescription = productDescription;
         this.productInventory = productInventory;
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
     }
 
 
@@ -77,6 +124,10 @@ public class Product extends ProductImages {
         this.productPrice = productPrice;
     }
 
+<<<<<<< HEAD
+    public String getProduct_description() {
+        return product_description;
+=======
     public double getOldPrice() {
         return oldPrice;
     }
@@ -87,6 +138,7 @@ public class Product extends ProductImages {
 
     public String getProductDescription() {
         return productDescription;
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
     }
 
     public void setProductDescription(String productDescription) {

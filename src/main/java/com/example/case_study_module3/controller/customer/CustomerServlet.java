@@ -1,8 +1,11 @@
 package com.example.case_study_module3.controller.customer;
+<<<<<<< HEAD
+=======
 
 import com.example.case_study_module3.model.customer.Customer;
 import com.example.case_study_module3.service.customer.CustomerService;
 import com.example.case_study_module3.service.customer.ICustomerService;
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
 
 import javax.servlet.*;
 import javax.servlet.http.*;
