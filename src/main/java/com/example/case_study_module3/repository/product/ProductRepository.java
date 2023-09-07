@@ -13,6 +13,7 @@ public class ProductRepository implements IProductRepository {
     private static final String SELECT_ALL_PRODUCT = "call show_all_product();";
 
     private static final String SELECT_PRODUCT_DETAIL = "call show_product_detail(?);";
+//    private static final String FIND_PRODUCT_BY_NAME =
 
     @Override
     public List<Product> showListChair() {
@@ -110,5 +111,31 @@ public class ProductRepository implements IProductRepository {
             throw new RuntimeException(e);
         }
         return product;
+    }
+
+    @Override
+    public List<Product> findByName(String searchName) {
+        Connection connection = BaseProductRepository.getConnection();
+        List<Product> productList = new ArrayList<>();
+        try {
+            CallableStatement callableStatement = connection.prepareCall(SELECT_ALL_PRODUCT);
+            ResultSet resultSet = callableStatement.executeQuery();
+            while (resultSet.next()){
+                if (resultSet.getString("product_name").contains(searchName)){
+                    int productId = resultSet.getInt("product_id");
+                    String productName = resultSet.getString("product_name");
+                    double productPrice = resultSet.getDouble("product_price");
+                    double oldPrice = resultSet.getDouble("old_price");
+                    String productDescription = resultSet.getString("product_description");
+                    int productInventory = resultSet.getInt("product_inventory");
+                    String imagesUrl = resultSet.getString("images_url");
+                    String erasingImg = resultSet.getString("erasing_img");
+                    productList.add(new Product(imagesUrl, erasingImg, productId, productName, productPrice, oldPrice, productDescription, productInventory));
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
     }
 }

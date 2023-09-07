@@ -27,6 +27,7 @@ public class ProductServlet extends HttpServlet {
             case "showFormUpdate":
                 break;
             case "showFormSearch":
+                showFormSearch(request,response);
                 break;
             case "showListChair":
                 showListChair(request, response);
@@ -40,6 +41,16 @@ public class ProductServlet extends HttpServlet {
             case "showProductDetail":
                 showProductDetail(request, response);
                 break;
+            default:
+        }
+    }
+
+    private void showFormSearch(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/form_search_jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -47,7 +58,7 @@ public class ProductServlet extends HttpServlet {
         int productId = Integer.parseInt(request.getParameter("productId"));
         Product product = productService.finById(productId);
         request.setAttribute("product", product);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_details/productdetails.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/productdetails.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
@@ -58,7 +69,7 @@ public class ProductServlet extends HttpServlet {
     private void showListChair(HttpServletRequest request, HttpServletResponse response) {
         List<Product> listChair = productService.showListChair();
         request.setAttribute("listChair", listChair);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product/product_chair.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_chair.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
@@ -69,7 +80,7 @@ public class ProductServlet extends HttpServlet {
     private void showListDesk(HttpServletRequest request, HttpServletResponse response) {
         List<Product> listDesk = productService.showListDesk();
         request.setAttribute("listDesk", listDesk);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product/product_desk.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_desk.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
@@ -80,7 +91,7 @@ public class ProductServlet extends HttpServlet {
     private void showListAccessories(HttpServletRequest request, HttpServletResponse response) {
         List<Product> listAccessories = productService.showListAccessories();
         request.setAttribute("listAccessories", listAccessories);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product/product_accessories.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_accessories.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
@@ -96,6 +107,21 @@ public class ProductServlet extends HttpServlet {
         if (action == null) {
             action = "";
         }
+        switch (action){
+            case "search":
+                searchByName(request,response);
+        }
+    }
 
+    private void searchByName(HttpServletRequest request, HttpServletResponse response) {
+        String productName = request.getParameter("product_name");
+        List<Product> productList = productService.findByName(productName);
+        request.setAttribute("productList",productList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/form_search_product.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

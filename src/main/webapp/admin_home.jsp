@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -32,8 +33,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">
                 <div class="nav-links">
-                    <li><a href="index.jsp">Trang chủ</a></li>
-
+                    <li>
+                        <div class="dropdown" id="admin">
+                            <a style="font-weight: bold; border: unset" class="btn" type="button"
+                               data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                                Admin
+                            </a>
+                        </div>
                     <li>
                         <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                            aria-controls="offcanvasExample">
@@ -45,10 +51,16 @@
                 </div>
 
                 <div class="nav-btns">
-                    <!--                   đăng nhập-->
-                    <button class="btn-primary" type="submit"><a
-                            href="/login.jsp">Đăng
-                        nhập</a></button>
+
+                    <!--                   tên admin-->
+                    <p style="border: 1px solid; border-radius: 10px; padding: 15px;margin: 10px;top: 11px;cursor: default">
+                        <c:out value="${account.userName}"/>
+                        <a data-bs-toggle="modal"
+                           data-bs-target="#exampleModal">
+                            <i id="log-out" style="cursor: pointer;font-size: 30px; margin: 5px 7px;"
+                               class="fa-solid fa-right-from-bracket"></i>
+                        </a>
+                    </p>
 
                     <!--                     tìm kiếm-->
                     <form action="/product-servlet?action=search" method="post">
@@ -73,25 +85,52 @@
                         </div>
                     </form>
 
-
                     <!--                          giỏ hàng-->
-                    <button class="search-box-cart" class="btn btn-primary" type="button"
+                    <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"
                             data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
-                            class="btn position-relative">
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fa-solid fa-cart-plus"></i>
-                        <span style="margin: 81px -10px;font-size: 11px;" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    0
-                    <span class="visually-hidden">unread messages</span>
-                        </span>
                     </button>
-
-
                 </div>
             </ul>
         </div>
     </nav>
     <!--    hết-->
+
+
+    <%--modal đăng xuất--%>
+    <div class="modal" tabindex="-1" id="exampleModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="index.jsp">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden">
+                        <span class="text-danger">Admin có chắc chắn muốn đăng xuất không ?</span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <button type="submit" class="btn btn-primary">Đăng xuất</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <%--    danh sách phân quyền admin--%>
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+            <h3 class="offcanvas-title" id="offcanvasTopLabel">Danh sách quản lý bởi Admin</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+
+        </div>
+    </div>
+    <%--    hết--%>
 
 
     <!--    danh sách option sản phẩm-->
