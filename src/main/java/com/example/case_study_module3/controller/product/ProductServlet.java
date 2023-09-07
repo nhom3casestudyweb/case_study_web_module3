@@ -135,6 +135,7 @@ public class ProductServlet extends HttpServlet {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        int a = 0;
     }
 
     private void editProducts(HttpServletRequest request, HttpServletResponse response) {
