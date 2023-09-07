@@ -16,13 +16,30 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="product.css">
+=======
+<<<<<<<< HEAD:src/main/webapp/product.jsp
+    <link rel="stylesheet" href="product.css">
+========
+    <link rel="stylesheet" href="/css/product_chair.css">
+    <link rel="stylesheet" href="/css/cart.css">
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
 </head>
 <body>
 <div class="header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="logo ">
+<<<<<<< HEAD
             <img src="images/logo_pixian.png"
+=======
+<<<<<<<< HEAD:src/main/webapp/product.jsp
+            <img src="images/logo_pixian.png"
+========
+            <img src="product/logo_pixian.png"
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                  alt="">
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -49,6 +66,10 @@
                     <button class="btn-primary"><a
                             href="/login/login.jsp">Đăng
                         nhập</a></button>
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:src/main/webapp/product.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                     <div class="search-box">
                         <input class="search-box-input" type="search" placeholder="Tìm tên sản phẩm...">
                         <button class="search-box-btn" type="submit">
@@ -57,6 +78,42 @@
                     </div>
                     <button class="search-box-cart">
                         <i class='bx bx-cart-add'></i>
+<<<<<<< HEAD
+=======
+========
+
+                    <!--                     tìm kiếm-->
+                    <form action="/product-servlet?action=search" method="post">
+                        <div class="search-box">
+                            <input name="product_name" id="product_name" list="topics" class="search-box-input" type="search"
+                                   placeholder="Tìm tên sản phẩm...">
+                            <datalist id="topics">
+                                <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">
+                                <option value="Gác Chân Công Thái Học Ergonomic Footrest Ghế Kê Chân Văn Phòng">
+                                <option value="Ghế Công Thái Học Manson Vera Lưới Vân Rồng Đen">
+                                <option value="Ghế Văn Phòng Tay Gập Xiaomi Manson Ergonomic">
+                                <option value="Bàn SMARTDESK GAMING">
+                                <option value="Bàn SMARTDESK GAMING BLACK PC">
+                                <option value="Bàn SMARTDESK STUDIO PRO">
+                                <option value="Bàn SMARTDESK STUDIO PIANO">
+                                <option value="BỘ BÁNH XE CHỊU LỰC BÀN SMARTDESK">
+                                <option value="Giá Treo CPU Buddy">
+                            </datalist>
+                            <button type="button" class="search-box-btn">
+                                <i class='bx bx-search-alt'></i>
+                            </button>
+                        </div>
+                    </form>
+
+
+
+                    <!--                          giỏ hàng-->
+                    <button class="search-box-cart" type="submit" class="btn btn-primary" type="button"
+                            data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <i class="fa-solid fa-cart-plus"></i>
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                     </button>
                 </div>
             </ul>
@@ -132,8 +189,18 @@
         <c:forEach var="product" items="${listChair}">
             <div class="col">
                 <div class="card">
+<<<<<<< HEAD
                     <div class="card-heart">
                         <i class='bx bxs-heart'></i>
+=======
+<<<<<<<< HEAD:src/main/webapp/product.jsp
+                    <div class="card-heart">
+                        <i class='bx bxs-heart'></i>
+========
+                    <div class="card-img">
+                        <img src="/erasing_img_product/${product.erasingImg}"/>
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                     </div>
                     <div class="card-cart">
                         <i class='bx bxs-cart'></i>
@@ -147,7 +214,15 @@
                         <p><c:out value="${product.product_price}"/>đ</p>
                     </div>
                     <div class="card-action">
+<<<<<<< HEAD
                         <button>Xem chi tiết sản phẩm</button>
+=======
+<<<<<<<< HEAD:src/main/webapp/product.jsp
+                        <button>Xem chi tiết sản phẩm</button>
+========
+                        <button type="submit" name="productId" value="${product.productId}"><a  href="/product-servlet?action=showProductDetail&productId=${product.productId}" style="text-decoration: none; color: white">Xem chi tiết sản phẩm</a></button>
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                     </div>
                 </div>
             </div>
