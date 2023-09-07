@@ -3,22 +3,19 @@ package com.example.case_study_module3.repository.customer;
 import com.example.case_study_module3.model.customer.Customer;
 import com.example.case_study_module3.repository.product.BaseProductRepository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerRepository implements ICustomerRepository{
-    private static final String SELECT_ALL_USERS = "select * from user";
+public class CustomerRepository implements ICustomerRepository {
+    private static final String SELECT_ALL_USERS = "select * from user where delete_user = 0";
     private static final String INSERT_USERS = " insert into user(user_name,user_dob,user_gender,user_id_card,user_phone_number,user_mail,user_address,account_user_name)" +
             "values(?,?,?,?,?,?,?,?)";
     private static final String UPDATE_USERS = " update user set user_name = ?,user_dob= ?, user_gender =?, user_id_card=?" +
             ",user_phone_number=?,user_mail=?,user_address=? where user_id = ? ";
     private static final String SELECT_USERS_BY_ID = " select user_id,user_name,user_dob,user_gender,user_id_card,user_phone_number,user_mail,user_address from user\n" +
             " where user_id =?; ";
-    private static final String DELETE_ACCOUNT = "update user set user_is_delete= 1 where user_id = ?";
+    private static final String DELETE_ACCOUNT = "call delete_by_id(?);";
     private static final String SELECT_USERS_BY_ACC_USER_NAME = " select user_id,user_name,user_dob,user_gender,user_id_card,user_phone_number,user_mail,user_address,account_user_name from user\n" +
             " where account_user_name = ?; ";
 
@@ -124,9 +121,10 @@ public class CustomerRepository implements ICustomerRepository{
         Connection connection = BaseProductRepository.getConnection();
         boolean rowDelete;
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_ACCOUNT);
-            preparedStatement.setInt(1, id);
-            rowDelete = preparedStatement.executeUpdate() > 0;
+            CallableStatement callableStatement = connection.prepareCall(DELETE_ACCOUNT);
+            callableStatement.setInt(1, id);
+            callableStatement.executeUpdate();
+            rowDelete = callableStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
