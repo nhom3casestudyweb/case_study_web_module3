@@ -17,22 +17,35 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<<<<<<< HEAD
 <<<<<<<< HEAD:src/main/webapp/product.jsp
     <link rel="stylesheet" href="product.css">
 ========
     <link rel="stylesheet" href="/css/product_chair.css">
     <link rel="stylesheet" href="/css/cart.css">
 >>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+=======
+<<<<<<<< HEAD:src/main/webapp/form_search_product.jsp
+    <link rel="stylesheet" href="/css/product_desk.css">
+========
+    <link rel="stylesheet" href="/css/product_chair.css">
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+    <link rel="stylesheet" href="/css/cart.css">
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
 </head>
 <body>
 <div class="header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="logo ">
+<<<<<<< HEAD
 <<<<<<<< HEAD:src/main/webapp/product.jsp
             <img src="images/logo_pixian.png"
 ========
             <img src="product/logo_pixian.png"
 >>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+=======
+            <img src="product/logo_pixian.png"
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                  alt="">
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -59,6 +72,7 @@
                     <button class="btn-primary"><a
                             href="/login.jsp">Đăng
                         nhập</a></button>
+<<<<<<< HEAD
 <<<<<<<< HEAD:src/main/webapp/product.jsp
                     <div class="search-box">
                         <input class="search-box-input" type="search" placeholder="Tìm tên sản phẩm...">
@@ -69,6 +83,8 @@
                     <button class="search-box-cart">
                         <i class='bx bx-cart-add'></i>
 ========
+=======
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
 
                     <!--                     tìm kiếm-->
                     <form action="/product-servlet?action=search" method="post">
@@ -100,7 +116,10 @@
                             data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fa-solid fa-cart-plus"></i>
+<<<<<<< HEAD
 >>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+=======
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                     </button>
                 </div>
             </ul>
@@ -128,8 +147,13 @@
             </button>
             <ul class="dropdown-menu">
                 <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế công thái học</a></li>
+<<<<<<< HEAD
                 <li><a style="font-weight: bold" class="dropdown-item" href="#">Bàn công thái học</a></li>
                 <li><a style="font-weight: bold" class="dropdown-item" href="#">Phụ kiện công thái học</a></li>
+=======
+                <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn công thái học</a></li>
+                <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                 <li><hr class="dropdown-divider"></li>
                 <li><a style="font-weight: bold" class="dropdown-item" href="#">
                     Sản phẩm HOT
@@ -140,12 +164,40 @@
     </div>
 </div>
 <!--    hết-->
+<<<<<<< HEAD
+=======
+
+<!--    menu giỏ hàng-->
+<form action="" method="">
+    <div style="background: grey" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h3 class="offcanvas-title" id="offcanvasRightLabel">Giỏ hàng của bạn</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            Giỏ hàng của bạn đang trống !
+        </div>
+        <hr>
+        <div class="price-product">
+            <h4 class="total-price">Tổng tiền</h4>
+            <h4 class="price">0 đ</h4>
+        </div>
+        <p style="font-size: 13px; margin: 19px 14px">Phí vận chuyển sẽ được tính khi bạn thanh toán sản phẩm</p>
+        <button class="buy-product" type="submit">
+            Thanh Toán
+        </button>
+    </div>
+</form>
+<!--    hết-->
+
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
 <div class="none"></div>
 <br>
 
 <!--header-->
 <div class="class-deader-product">
     <h1>Sản phẩm</h1>
+<<<<<<< HEAD
     <p>các sản phẩm ghế công thái học có mặt tại cửa hàng</p>
 </div>
 
@@ -189,10 +241,24 @@
                     </div>
                     <div class="card-img">
                         <img src="images/ghecongthaihoc.png"/></div>
+=======
+    <p>các sản tìm được tại shop</p>
+</div>
+
+<div class="container text-center">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+        <c:forEach var="product" items="${productList}">
+            <div class="col">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="/erasing_img_product/${product.erasingImg}"/>
+                    </div>
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                     <div class="card-title">
                         <p><c:out value="${product.productName}"/></p>
                     </div>
                     <div class="card-price">
+<<<<<<< HEAD
                        <p><fmt:formatNumber value="${product.productPrice}"/> đ</p>
                     </div>
                     <div class="card-action">
@@ -201,6 +267,16 @@
 ========
                         <button type="submit" name="productId" value="${product.productId}"><a  href="/product-servlet?action=showProductDetail&productId=${product.productId}" style="text-decoration: none; color: white">Xem chi tiết sản phẩm</a></button>
 >>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+=======
+<<<<<<<< HEAD:src/main/webapp/form_search_product.jsp
+                        <p><fmt:formatNumber value="${product.productPrice}"/> đ</p>
+========
+                       <p><fmt:formatNumber value="${product.productPrice}"/> đ</p>
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+                    </div>
+                    <div class="card-action">
+                        <button type="submit" name="productId" value="${product.productId}"><a  href="/product-servlet?action=showProductDetail&productId=${product.productId}" style="text-decoration: none; color: white">Xem chi tiết sản phẩm</a></button>
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                     </div>
                 </div>
             </div>

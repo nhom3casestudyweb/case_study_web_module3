@@ -13,20 +13,27 @@ import java.util.List;
 @WebServlet(name = "ProductServlet", value = "/product-servlet")
 public class ProductServlet extends HttpServlet {
     private IProductService productService = new ProductService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
-        if (action == null){
+        if (action == null) {
             action = "";
         }
+<<<<<<< HEAD
         switch (action){
             case "editProduct" :
                 editProduct(request,response);
+=======
+        switch (action) {
+            case "showFormCreate":
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
                 break;
             case "showFormUpdate":
                 break;
             case "showFormSearch":
+                showFormSearch(request,response);
                 break;
             case "showListChair":
                 showListChair(request, response);
@@ -37,6 +44,7 @@ public class ProductServlet extends HttpServlet {
             case "showListAccessories":
                 showListAccessories(request, response);
                 break;
+<<<<<<< HEAD
             default:
                 showFormCreate(request,response);
                 break;
@@ -47,6 +55,17 @@ public class ProductServlet extends HttpServlet {
         int idProduct = Integer.parseInt(request.getParameter("code"));
         Product product = productService.editProduct(idProduct);
         request.setAttribute("product",product);
+=======
+            case "showProductDetail":
+                showProductDetail(request, response);
+                break;
+            default:
+        }
+    }
+
+    private void showFormSearch(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/form_search_jsp");
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
         try {
             request.getRequestDispatcher("form_edit_product.jsp").forward(request,response);
         } catch (ServletException e) {
@@ -68,12 +87,29 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
+    private void showProductDetail(HttpServletRequest request, HttpServletResponse response) {
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        Product product = productService.finById(productId);
+        request.setAttribute("product", product);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/productdetails.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private void showListChair(HttpServletRequest request, HttpServletResponse response) {
         List<Product> listChair = productService.showListChair();
+<<<<<<< HEAD
         request.setAttribute("listChair",listChair);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("product.jsp");
+=======
+        request.setAttribute("listChair", listChair);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_chair.jsp");
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
@@ -81,21 +117,32 @@ public class ProductServlet extends HttpServlet {
 
     private void showListDesk(HttpServletRequest request, HttpServletResponse response) {
         List<Product> listDesk = productService.showListDesk();
+<<<<<<< HEAD
         request.setAttribute("listDesk",listDesk);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("");
+=======
+        request.setAttribute("listDesk", listDesk);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_desk.jsp");
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     private void showListAccessories(HttpServletRequest request, HttpServletResponse response) {
+<<<<<<< HEAD
         List<Product> showListAccessories = productService.showListAccessories();
         request.setAttribute("showListAccessories",showListAccessories);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("");
+=======
+        List<Product> listAccessories = productService.showListAccessories();
+        request.setAttribute("listAccessories", listAccessories);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_accessories.jsp");
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
         try {
-            requestDispatcher.forward(request,response);
+            requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
@@ -110,6 +157,7 @@ public class ProductServlet extends HttpServlet {
             action = "";
         }
         switch (action){
+<<<<<<< HEAD
             case "deleteProduct":
                 deleteProduct(request,response);
                 break;
@@ -120,7 +168,23 @@ public class ProductServlet extends HttpServlet {
                 createProduct(request,response);
                 break;
         }
+=======
+            case "search":
+                searchByName(request,response);
+        }
+    }
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
 
+    private void searchByName(HttpServletRequest request, HttpServletResponse response) {
+        String productName = request.getParameter("product_name");
+        List<Product> productList = productService.findByName(productName);
+        request.setAttribute("productList",productList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/form_search_product.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void createProduct(HttpServletRequest request, HttpServletResponse response) {
