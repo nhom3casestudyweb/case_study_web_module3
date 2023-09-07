@@ -17,7 +17,15 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<<<<<<< HEAD
+<<<<<<<< HEAD:src/main/webapp/form_search_product.jsp
     <link rel="stylesheet" href="/css/product_desk.css">
+========
+    <link rel="stylesheet" href="/css/product_chair.css">
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+=======
+    <link rel="stylesheet" href="/css/product_desk.css">
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
     <link rel="stylesheet" href="/css/cart.css">
 </head>
 <body>
@@ -166,7 +174,15 @@
                         <p><c:out value="${product.productName}"/></p>
                     </div>
                     <div class="card-price">
+<<<<<<< HEAD
+<<<<<<<< HEAD:src/main/webapp/form_search_product.jsp
                         <p><fmt:formatNumber value="${product.productPrice}"/> đ</p>
+========
+                       <p><fmt:formatNumber value="${product.productPrice}"/> đ</p>
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+=======
+                        <p><fmt:formatNumber value="${product.productPrice}"/> đ</p>
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                     </div>
                     <div class="card-action">
                         <button type="submit" name="productId" value="${product.productId}"><a  href="/product-servlet?action=showProductDetail&productId=${product.productId}" style="text-decoration: none; color: white">Xem chi tiết sản phẩm</a></button>

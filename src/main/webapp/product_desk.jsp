@@ -151,12 +151,20 @@
 <!--header-->
 <div class="class-deader-product">
     <h1>Sản phẩm</h1>
+<<<<<<<< HEAD:src/main/webapp/product_desk.jsp
     <p>các sản phẩm bàn công thái học có mặt tại cửa hàng</p>
+========
+    <p>các sản tìm được tại shop</p>
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/form_search_product.jsp
 </div>
 
 <div class="container text-center">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+<<<<<<<< HEAD:src/main/webapp/product_desk.jsp
         <c:forEach var="product" items="${listDesk}">
+========
+        <c:forEach var="product" items="${productList}">
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/form_search_product.jsp
             <div class="col">
                 <div class="card">
                     <div class="card-img">

@@ -11,11 +11,21 @@ body {
 }
 
 p, h3 {
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
 <<<<<<<< HEAD:src/main/webapp/product/product.css
     font-size: 20px;
 ========
     font-size: 19px;
 >>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/css/product_accessories.css
+<<<<<<< HEAD
+=======
+    font-size: 19px;
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
+=======
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
     text-align: center;
     color: black;
     font-weight: bold;

@@ -6,12 +6,12 @@
 
 body {
     height: 100vh;
-    background: #fff5ee;
+    background: linear-gradient(to right, grey, lightsteelblue);
     font-family: Cambria;
 }
 
 p, h3 {
-    font-size: 19px;
+    font-size: 18px;
     text-align: center;
     color: black;
     font-weight: bold;

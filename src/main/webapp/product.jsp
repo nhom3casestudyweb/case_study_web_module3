@@ -7,32 +7,39 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/form_product.css">
+    <link rel="stylesheet" href="form_product.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="product.css">
+=======
 <<<<<<<< HEAD:src/main/webapp/product.jsp
     <link rel="stylesheet" href="product.css">
 ========
     <link rel="stylesheet" href="/css/product_chair.css">
     <link rel="stylesheet" href="/css/cart.css">
 >>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
 </head>
 <body>
 <div class="header">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="logo ">
+<<<<<<< HEAD
+            <img src="images/logo_pixian.png"
+=======
 <<<<<<<< HEAD:src/main/webapp/product.jsp
             <img src="images/logo_pixian.png"
 ========
             <img src="product/logo_pixian.png"
 >>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                  alt="">
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -51,15 +58,18 @@
                         </a>
                     </li>
 
-                    <li><a href="/profilecard.jsp" target="_blank">Liên hệ</a></li>
+                    <li><a href="/profile_card/profilecard.jsp" target="_blank">Liên hệ</a></li>
                     </li>
                 </div>
 
                 <div class="nav-btns">
                     <button class="btn-primary"><a
-                            href="/login.jsp">Đăng
+                            href="/login/login.jsp">Đăng
                         nhập</a></button>
+<<<<<<< HEAD
+=======
 <<<<<<<< HEAD:src/main/webapp/product.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                     <div class="search-box">
                         <input class="search-box-input" type="search" placeholder="Tìm tên sản phẩm...">
                         <button class="search-box-btn" type="submit">
@@ -68,6 +78,8 @@
                     </div>
                     <button class="search-box-cart">
                         <i class='bx bx-cart-add'></i>
+<<<<<<< HEAD
+=======
 ========
 
                     <!--                     tìm kiếm-->
@@ -101,6 +113,7 @@
                             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fa-solid fa-cart-plus"></i>
 >>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                     </button>
                 </div>
             </ul>
@@ -176,6 +189,10 @@
         <c:forEach var="product" items="${listChair}">
             <div class="col">
                 <div class="card">
+<<<<<<< HEAD
+                    <div class="card-heart">
+                        <i class='bx bxs-heart'></i>
+=======
 <<<<<<<< HEAD:src/main/webapp/product.jsp
                     <div class="card-heart">
                         <i class='bx bxs-heart'></i>
@@ -183,6 +200,7 @@
                     <div class="card-img">
                         <img src="/erasing_img_product/${product.erasingImg}"/>
 >>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                     </div>
                     <div class="card-cart">
                         <i class='bx bxs-cart'></i>
@@ -190,17 +208,21 @@
                     <div class="card-img">
                         <img src="images/ghecongthaihoc.png"/></div>
                     <div class="card-title">
-                        <p><c:out value="${product.productName}"/></p>
+                        <p><c:out value="${product.product_name}"/></p>
                     </div>
                     <div class="card-price">
-                       <p><fmt:formatNumber value="${product.productPrice}"/> đ</p>
+                        <p><c:out value="${product.product_price}"/>đ</p>
                     </div>
                     <div class="card-action">
+<<<<<<< HEAD
+                        <button>Xem chi tiết sản phẩm</button>
+=======
 <<<<<<<< HEAD:src/main/webapp/product.jsp
                         <button>Xem chi tiết sản phẩm</button>
 ========
                         <button type="submit" name="productId" value="${product.productId}"><a  href="/product-servlet?action=showProductDetail&productId=${product.productId}" style="text-decoration: none; color: white">Xem chi tiết sản phẩm</a></button>
 >>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/product_chair.jsp
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
                     </div>
                 </div>
             </div>
@@ -243,6 +265,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
-<script src="product/search.js"></script>
+<script src="search.js"></script>
 </body>
 </html>

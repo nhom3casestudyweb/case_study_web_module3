@@ -321,8 +321,18 @@ nav {
     transform: scale(1.1);
     transition: 0.5s;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:src/main/webapp/home_page2.css
 =======
+=======
+<<<<<<<< HEAD:src/main/webapp/home_page2.css
+========
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
+=======
+<<<<<<< HEAD:src/main/webapp/home_page2.css
+=======
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
 .buy-product:hover{
     transform: scale(0.9);
 
@@ -334,7 +344,15 @@ nav {
     background: transparent;
     border: 0;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/css/home_page2.css
+=======
+>>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/css/home_page2.css
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a
+=======
+>>>>>>> 3131d05c12dbcceb7faf0be23fba715278f7b32a:src/main/webapp/css/home_page2.css
+>>>>>>> 12ca9736195176eb1c9ab6f443710ab72a68b31a
 @media screen and (max-width: 500px) {
     .header-content {
         text-align: center;
