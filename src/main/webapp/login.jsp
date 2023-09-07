@@ -40,22 +40,22 @@
                     <c:if test="${errMap != null}">
                         <label class="text-danger">${errMap.errPassword}</label>
                     </c:if>
-                    <div style="color: darkred;margin-top: 16px;font-size: 16px;"
+                    <div style="color: darkred;margin-top: 18px;font-size: 18px;"
                          data-bs-toggle="modal"
                          data-bs-target="#exampleModal">
                         ${msg}
                     </div>
 
                 </div>
-                <div class="remember-forgot">
-                    <span class="col-md-6 col-xl" style="">
+                <div class="remember-forgot" style="margin-top: -67px;">
+                    <span class="col-md-6 col-xl" style="margin: -20px 17px 6px -9px;">
                         <label style="color: black;font-size: 21px;margin: 110px 9px 22px -57px;">
                             <input type="checkbox" style="font-size: 24px;"> Nhớ mật khẩu
                         </label>
                     </span>
-                    <span class="col-md-6 col-xl" style="">
+                    <span class="col-md-6 col-xl" style="margin: -20px 17px 6px -9px;">
                          <label style="color: black;font-size: 21px;margin: 107px -151px 24px -55px;}">
-                        <a style="font-size: 19px; color: black"
+                        <a style="font-size: 19px; color: black;padding: 25px;"
                            href="/account?action=forgotPassword">Quên mật khẩu?</a>
                               </label>
                     </span>

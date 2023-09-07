@@ -53,7 +53,7 @@
                 <div class="nav-btns">
 
                     <!--                   tên admin-->
-                    <p style="border: 1px solid; border-radius: 10px; padding: 15px;margin: 10px;top: 11px;cursor: default">
+                    <p style="font-size: 20px;height: 61px; border: 1px solid; border-radius: 9px; padding: 6px 14px 29px 16px ;margin: 6px 10px;top: 11px;cursor: default">
                         <c:out value="${account.userName}"/>
                         <a data-bs-toggle="modal"
                            data-bs-target="#exampleModal">
@@ -65,7 +65,8 @@
                     <!--                     tìm kiếm-->
                     <form action="/product-servlet?action=search" method="post">
                         <div class="search-box">
-                            <input name="product_name" id="product_name" list="topics" class="search-box-input" type="search"
+                            <input name="product_name" id="product_name" list="topics" class="search-box-input"
+                                   type="search"
                                    placeholder="Tìm tên sản phẩm...">
                             <datalist id="topics">
                                 <option value="Ghế Văn Phòng Tay Gập Chân Xoay Xiaomi Manson Oasis Màu Đen">

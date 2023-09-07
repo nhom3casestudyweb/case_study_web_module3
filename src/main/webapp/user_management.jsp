@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: ACER
@@ -64,7 +65,7 @@
         <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">
             <div class="nav-links">
                 <li>
-                    <a href="/user_management.jsp">Quản lí người dùng</a>
+                    <a href="/customer">Quản lí người dùng</a>
                 </li>
                 <li>
                     <a href="">Quản lí Sản phẩm</a>
@@ -100,7 +101,14 @@
         <tr>
             <td><c:out value="${loop.count}"/></td>
             <td><c:out value="${customer.getName()}"/></td>
-            <td><c:out value="${customer.getdOB()}"/></td>
+
+<%--            xử lí ngày tháng năm--%>
+            <c:set var="dateString" value="${customer.getdOB()}"/>
+            <fmt:parseDate value="${dateString}" var="date" pattern="yyyy-MM-dd"/>
+            <td>
+                <fmt:formatDate value="${date}" pattern="dd/MM/yyyy"/>
+            </td>
+
             <c:if test="${customer.isGender() == true}">
                 <td>Nam</td>
             </c:if>
@@ -139,6 +147,7 @@
                 <div class="modal-body">
                     <input type="hidden" id="id" name="id">
                     Bạn có chắc muốn xóa <span id="name_delete" class="text-danger"></span> ?
+                    <div class="text-danger">Lưu ý: người dùng này sẽ bị xóa vĩnh viễn</div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>

@@ -48,11 +48,12 @@
                 <div class="nav-btns">
 
                     <%--          tên user--%>
-                        <p style="border: 1px solid; border-radius: 10px; padding: 15px;margin: 10px;top: 11px;cursor: default">
+                        <p style="font-size: 20px;height: 61px; border: 1px solid; border-radius: 9px; padding: 6px 14px 29px 16px ;margin: 6px 10px;top: 11px;cursor: default">
                             <c:out value="${account.userName}"/>
                             <a data-bs-toggle="modal"
                                data-bs-target="#exampleModal">
-                                <i id="log-out" style="cursor: pointer;font-size: 30px; margin: 5px 7px;" class="fa-solid fa-right-from-bracket"></i>
+                                <i id="log-out" style="cursor: pointer;font-size: 30px; margin: 5px 7px;"
+                                   class="fa-solid fa-right-from-bracket"></i>
                             </a>
                         </p>
 

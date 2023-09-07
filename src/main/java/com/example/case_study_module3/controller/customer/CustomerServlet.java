@@ -106,14 +106,15 @@ public class CustomerServlet extends HttpServlet {
         String phoneNumber = request.getParameter("user_phone_number");
         String email = request.getParameter("user_mail");
         String address = request.getParameter("user_address");
-        Customer customer = new Customer(id, name, dateOfBirth, gender, userIdCard, phoneNumber, email, address);
+        String accUserName = request.getParameter("account_user_name");
+        Customer customer = new Customer(id, name, dateOfBirth, gender, userIdCard, phoneNumber, email, address,accUserName);
         Map<String, String> errMapEdit = this.customerService.updateUser(customer);
         if (errMapEdit.isEmpty()) {
-            response.sendRedirect("/ProductServlet");
+            response.sendRedirect("user");
         } else {
             request.setAttribute("customer", customer);
             request.setAttribute("error", errMapEdit);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("customer/edit.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("user_management.jsp");
             requestDispatcher.forward(request, response);
         }
     }

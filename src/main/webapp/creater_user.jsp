@@ -48,7 +48,7 @@
           </li>
           <li><a href="">Thêm người dùng</a></li>
 
-            <h2 style="margin: 15px 123px;">Danh sách người dùng</h2>
+          <h2 style="margin: 15px 123px;">Danh sách người dùng</h2>
         </div>
 
       </ul>
@@ -91,11 +91,6 @@
     border-radius: 13px;
     padding: 34px 11px;
     box-shadow: 4px 5px 5px black;" method="post" action="/customer?action=update">
-
-    <div class="mb-3">
-      <label class="form-label">Id người dùng</label>
-      <input value="${customer.getId()}" type="number" class="form-control" aria-describedby="emailHelp" readonly autofocus>
-    </div>
     <div class="mb-3">
       <label class="form-label">Tên người dùng</label>
       <input name="user_name" value="${customer.getName()}" type="text" class="form-control" >

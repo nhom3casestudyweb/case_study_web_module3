@@ -12,7 +12,7 @@ public class CustomerRepository implements ICustomerRepository {
     private static final String INSERT_USERS = " insert into user(user_name,user_dob,user_gender,user_id_card,user_phone_number,user_mail,user_address,account_user_name)" +
             "values(?,?,?,?,?,?,?,?)";
     private static final String UPDATE_USERS = " update user set user_name = ?,user_dob= ?, user_gender =?, user_id_card=?" +
-            ",user_phone_number=?,user_mail=?,user_address=? where user_id = ? ";
+            ",user_phone_number=?,user_mail=?,user_address=?, account_user_name = ? where user_id = ? ";
     private static final String SELECT_USERS_BY_ID = " select user_id,user_name,user_dob,user_gender,user_id_card,user_phone_number,user_mail,user_address from user\n" +
             " where user_id =?; ";
     private static final String DELETE_ACCOUNT = "call delete_by_id(?);";
@@ -86,7 +86,8 @@ public class CustomerRepository implements ICustomerRepository {
             preparedStatement.setString(5, customer.getPhoneNumber());
             preparedStatement.setString(6, customer.getEmail());
             preparedStatement.setString(7, customer.getAddress());
-            preparedStatement.setInt(8, customer.getId());
+            preparedStatement.setString(8, customer.getAddress());
+            preparedStatement.setString(9, customer.getAccUserName());
             rowUpdate = preparedStatement.executeUpdate() > 0;
             connection.close();
         } catch (SQLException e) {
