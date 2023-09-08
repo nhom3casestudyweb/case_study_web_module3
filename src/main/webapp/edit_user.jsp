@@ -46,7 +46,6 @@
           <li>
             <a href="/admin_home.jsp">Trang chủ</a>
           </li>
-          <li><a href="">Thêm người dùng</a></li>
 
             <h2 style="margin: 15px 123px;">Danh sách người dùng</h2>
         </div>
@@ -90,15 +89,15 @@
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 13px;
     padding: 34px 11px;
-    box-shadow: 4px 5px 5px black;" method="post" action="/customer?action=update">
+    box-shadow: 4px 5px 5px black;" method="post" action="/customer?action=editUser">
 
     <div class="mb-3">
       <label class="form-label">Id người dùng</label>
-      <input value="${customer.getId()}" type="number" class="form-control" aria-describedby="emailHelp" readonly autofocus>
+      <input name="user_id" value="${customer.getId()}" type="number" class="form-control" aria-describedby="emailHelp" readonly autofocus>
     </div>
     <div class="mb-3">
       <label class="form-label">Tên người dùng</label>
-      <input name="user_name" value="${customer.getName()}" type="text" class="form-control" >
+      <input autofocus name="user_name" value="${customer.getName()}" type="text" class="form-control" >
     </div>
     <div class="mb-3">
       <label class="form-label">Ngày sinh</label>
@@ -110,16 +109,13 @@
     <div class="mb-3">
       <label class="form-label">Giới tính</label>
       <c:if test="${customer.isGender() == true}">
-        <input name="user_gender"  placeholder="Nam" type="text" class="form-control">
+        <input readonly  name="user_gender"  placeholder="Nam" type="text" class="form-control">
       </c:if>
       <c:if test="${customer.isGender() == false}">
-        <input name="user_gender" placeholder="Nữ" value="${Nữ}" type="text" class="form-control">
+        <input readonly name="user_gender" placeholder="Nữ" value="${Nữ}" type="text" class="form-control">
       </c:if>
     </div>
 
-    <c:if test="${customer.isGender() == false}">
-      <td>Nữ</td>
-    </c:if>
 
 
     <div class="mb-3">
@@ -147,35 +143,6 @@
 </div>
 
 
-
-<%--modal--%>
-<div class="modal" tabindex="-1" id="exampleModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form action="customer?action=delete" method="post">
-        <div class="modal-header">
-          <h5 class="modal-title">Xóa user</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <input type="hidden" id="id" name="id">
-          Bạn có chắc muốn xóa <span id="name_delete" class="text-danger"></span> ?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-          <button style="background: grey;height: 43px;width: 77px;" type="submit" class="btn btn-primary">Xóa</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<script>
-  function sendInfoToModal(id,name){
-    document.getElementById("name_delete").innerText = name;
-    document.getElementById("id").value = id;
-  }
-</script>
 
 <%--hết--%>
 

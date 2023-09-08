@@ -117,4 +117,9 @@ public class CustomerService implements ICustomerService {
         return customerRepository.selectCustomerByAccUser(accUserName);
     }
 
+    @Override
+    public void editUser(int id, String name, String dateOfBirth, boolean gender, String phoneNumber, String email, String address, String accUserName) {
+        customerRepository.editUser(id,name,dateOfBirth,gender,phoneNumber,email,address,accUserName);
+    }
+
 }

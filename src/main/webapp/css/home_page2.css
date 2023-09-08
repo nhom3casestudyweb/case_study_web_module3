@@ -41,7 +41,7 @@ nav {
 }
 
 .nav-links li {
-    background: transparent;
+    background: darkgrey;
     border: 1px solid black;
     padding: 12px 20px;
     border-radius: 12px;
@@ -349,6 +349,10 @@ nav {
 #admin{
     background: transparent;
     border: 0;
+}
+.product-img img{
+    height: 100%;
+    width: 100%;
 }
 @media screen and (max-width: 500px) {
     .header-content {

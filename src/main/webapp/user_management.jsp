@@ -88,11 +88,10 @@
         <th>Tên người dùng</th>
         <th>Ngày sinh</th>
         <th>Giới tính</th>
-        <th>Mã CCCD</th>
         <th>Số điện thoại</th>
         <th>Email</th>
         <th>Địa chỉ</th>
-        <th>Tài khoản user</th>
+        <th>Tài khoản người dùng</th>
         <th></th>
     </tr>
     </thead>
@@ -115,7 +114,6 @@
             <c:if test="${customer.isGender() == false}">
                 <td>Nữ</td>
             </c:if>
-            <td><c:out value="${customer.getIdCard()}"/></td>
             <td><c:out value="${customer.getPhoneNumber()}"/></td>
             <td><c:out value="${customer.getEmail()}"/></td>
             <td><c:out value="${customer.getAddress()}"/></td>

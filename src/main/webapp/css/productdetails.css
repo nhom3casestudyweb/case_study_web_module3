@@ -42,7 +42,7 @@ nav {
 }
 
 .nav-links li {
-    background: transparent;
+    background: darkgrey;
     border: 1px solid black;
     padding: 12px 20px;
     border-radius: 12px;
@@ -50,6 +50,7 @@ nav {
     margin: auto 30px;
     cursor: pointer;
     font-weight: bold;
+    display: block;
 }
 
 .nav-links li:hover {

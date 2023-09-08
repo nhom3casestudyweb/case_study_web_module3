@@ -66,7 +66,7 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("customer/create.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/create.jsp");
         requestDispatcher.forward(request, response);
     }
 
@@ -88,9 +88,33 @@ public class CustomerServlet extends HttpServlet {
                 case "delete":
                     deleteUser(request, response);
                     break;
+                case "editUser":
+                    editUser(request,response);
+                    break;
+
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
+        }
+    }
+
+    private void editUser(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("user_id"));
+        String name = request.getParameter("user_name");
+        String dateOfBirth = "";
+        if (!request.getParameter("user_dob").isEmpty()) {
+            dateOfBirth = request.getParameter("user_dob");
+        }
+        boolean gender = request.getParameter("user_gender").equals("nam");
+        String phoneNumber = request.getParameter("user_phone_number");
+        String email = request.getParameter("user_mail");
+        String address = request.getParameter("user_address");
+        String accUserName = request.getParameter("account_user_name");
+        customerService.editUser(id,name,dateOfBirth,gender,phoneNumber,email,address,accUserName);
+        try {
+            response.sendRedirect("/customer");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -102,15 +126,14 @@ public class CustomerServlet extends HttpServlet {
             dateOfBirth = request.getParameter("user_dob");
         }
         boolean gender = request.getParameter("user_gender").equals("nam");
-        String userIdCard = request.getParameter("user_id_card");
         String phoneNumber = request.getParameter("user_phone_number");
         String email = request.getParameter("user_mail");
         String address = request.getParameter("user_address");
         String accUserName = request.getParameter("account_user_name");
-        Customer customer = new Customer(id, name, dateOfBirth, gender, userIdCard, phoneNumber, email, address,accUserName);
+        Customer customer = new Customer(id, name, dateOfBirth, gender, phoneNumber, email, address,accUserName);
         Map<String, String> errMapEdit = this.customerService.updateUser(customer);
         if (errMapEdit.isEmpty()) {
-            response.sendRedirect("user");
+            response.sendRedirect("/customer");
         } else {
             request.setAttribute("customer", customer);
             request.setAttribute("error", errMapEdit);

@@ -38,8 +38,26 @@ public class ProductServlet extends HttpServlet {
             case "showListAccessories":
                 showListAccessories(request, response);
                 break;
+            case "showListChairUser":
+                showListChairUser(request,response);
+                break;
+            case "showListDeskUser":
+                showListDeskUser(request,response);
+                break;
+            case "showListAccessoriesUser":
+                showListAccessoriesUser(request,response);
+                break;
             case "showProductDetail":
                 showProductDetail(request, response);
+                break;
+            case "showListChairAdmin":
+                showListChairAdmin(request,response);
+                break;
+            case "showListDeskAdmin":
+                showListDeskAdmin(request,response);
+                break;
+            case "showListAccessoriesAdmin":
+                showListAccessoriesAdmin(request,response);
                 break;
             default:
         }
@@ -76,6 +94,26 @@ public class ProductServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+    private void showListChairUser(HttpServletRequest request, HttpServletResponse response) {
+        List<Product> listChair = productService.showListChair();
+        request.setAttribute("listChair", listChair);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_chair_user.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void showListChairAdmin(HttpServletRequest request, HttpServletResponse response) {
+        List<Product> listChair = productService.showListChair();
+        request.setAttribute("listChair", listChair);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_chair_admin.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private void showListDesk(HttpServletRequest request, HttpServletResponse response) {
         List<Product> listDesk = productService.showListDesk();
@@ -87,11 +125,51 @@ public class ProductServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+    private void showListDeskUser(HttpServletRequest request, HttpServletResponse response) {
+        List<Product> listDesk = productService.showListDesk();
+        request.setAttribute("listDesk", listDesk);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_desk_user.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void showListDeskAdmin(HttpServletRequest request, HttpServletResponse response) {
+        List<Product> listDesk = productService.showListDesk();
+        request.setAttribute("listDesk", listDesk);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_desk_admin.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private void showListAccessories(HttpServletRequest request, HttpServletResponse response) {
         List<Product> listAccessories = productService.showListAccessories();
         request.setAttribute("listAccessories", listAccessories);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_accessories.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void showListAccessoriesUser(HttpServletRequest request, HttpServletResponse response) {
+        List<Product> listAccessories = productService.showListAccessories();
+        request.setAttribute("listAccessories", listAccessories);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_accessories_user.jsp");
+        try {
+            requestDispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void showListAccessoriesAdmin(HttpServletRequest request, HttpServletResponse response) {
+        List<Product> listAccessories = productService.showListAccessories();
+        request.setAttribute("listAccessories", listAccessories);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product_accessories_admin.jsp");
         try {
             requestDispatcher.forward(request, response);
         } catch (ServletException | IOException e) {

@@ -96,38 +96,41 @@
 
     <!--    danh sách option sản phẩm-->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="font-weight: bold">
-                Ergonomic3 Store
-                <i class="fa-solid fa-bag-shopping"></i>
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div>
-                Chúng tôi đặt quyền lợi khách hàng lên hàng đầu,
-                cung cấp các dịch vụ và trải nghiệm tuyệt vời nhất cho khách hàng về sản phẩm tại shop
+        <div class="list-product">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="font-weight: bold;font-size: 33px;margin: 20px -4px;">
+                    Ergonomic3 Store
+                    <i class="fa-brands fa-sass fa-bounce fa-sm" style="color: #7c889c;font-size: 39px;"></i>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="dropdown mt-3">
-                <button id="selection-product" class="btn btn-secondary dropdown-toggle" type="button"
-                        data-bs-toggle="dropdown">
-                    Xem sản phẩm của shop tại đây
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế
-                        công thái học</a></li>
-                    <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn
-                        công thái học</a></li>
-                    <li><a style="font-weight: bold" class="dropdown-item"
-                           href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a style="font-weight: bold" class="dropdown-item" href="#">
-                        Sản phẩm HOT
-                        <i class="fa-solid fa-fire"></i>
-                    </a></li>
-                </ul>
+            <div class="offcanvas-body" >
+                <div style="font-size: 21px">
+                    Chúng tôi đặt quyền lợi khách hàng lên hàng đầu,
+                    cung cấp các dịch vụ và trải nghiệm tuyệt vời nhất cho khách hàng về sản phẩm tại shop
+                    <i class="fa-brands fa-think-peaks fa-beat-fade fa-sm"></i>
+                </div>
+                <div class="dropdown mt-3">
+                    <button style="background: grey" id="selection-product" class="btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown">
+                        Xem sản phẩm của shop tại đây
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListChair">Ghế
+                            công thái học</a></li>
+                        <li><a style="font-weight: bold" class="dropdown-item" href="/product-servlet?action=showListDesk">Bàn
+                            công thái học</a></li>
+                        <li><a style="font-weight: bold" class="dropdown-item"
+                               href="/product-servlet?action=showListAccessories">Phụ kiện công thái học</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a style="font-weight: bold" class="dropdown-item" href="#">
+                            Sản phẩm HOT
+                            <i class="fa-solid fa-fire"></i>
+                        </a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

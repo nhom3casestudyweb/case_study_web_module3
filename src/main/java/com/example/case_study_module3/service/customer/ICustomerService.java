@@ -15,4 +15,5 @@ public interface ICustomerService {
     Map<String, String> updateUser(Customer customer);
     Customer selectCustomerByAccUser(String accUserName) throws SQLException;
 
+    void editUser(int id, String name, String dateOfBirth, boolean gender, String phoneNumber, String email, String address, String accUserName);
 }

@@ -220,6 +220,8 @@ public class AccountServlet extends HttpServlet {
         }
     }
 
+
+
     private void checkForgotPassword(HttpServletRequest request, HttpServletResponse response) {
         String userName = request.getParameter("userName");
         String code = request.getParameter("code");
@@ -311,7 +313,7 @@ public class AccountServlet extends HttpServlet {
             } else {
                 errMap.put("errUserName", "Tên tài khoản trùng lặp, vui lòng chọn tên khác!");
                 request.setAttribute("errMap", errMap);
-                requestDispatcher = request.getRequestDispatcher("/create.jsp");
+                requestDispatcher = request.getRequestDispatcher("/create_user.jsp");
             }
             request.setAttribute("userName", userName);
             request.setAttribute("password", password);
@@ -327,9 +329,7 @@ public class AccountServlet extends HttpServlet {
 
         try {
             requestDispatcher.forward(request, response);
-        } catch (ServletException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (ServletException | IOException e) {
             throw new RuntimeException(e);
         }
     }
