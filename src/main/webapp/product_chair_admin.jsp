@@ -35,7 +35,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="nav-list navbar-nav me-auto mb-2 mb-lg-0">
                 <div class="nav-links">
-                    <li><a href="admin_home">Trang chủ</a></li>
+                    <li><a href="/admin_home.jsp">Trang chủ</a></li>
 
                     <li>
                         <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">

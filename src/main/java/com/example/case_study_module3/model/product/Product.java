@@ -8,8 +8,17 @@ public class Product extends ProductImages {
     private String productDescription;
     private int productTypeId;
     private int productInventory;
+    private String images_url;
 
     public Product() {
+    }
+    public Product(int product_id, String product_name, double product_price, String product_description, int product_type_id, int product_inventory) {
+        this.productId = product_id;
+        this.productName = product_name;
+        this.productPrice = product_price;
+        this.productDescription = product_description;
+        this.productTypeId = product_type_id;
+        this.productInventory = product_inventory;
     }
 
     public Product(String productName, double productPrice, String productDescription, int productTypeId, int productInventory) {
@@ -18,6 +27,22 @@ public class Product extends ProductImages {
         this.productDescription = productDescription;
         this.productTypeId = productTypeId;
         this.productInventory = productInventory;
+    }
+    public Product(int product_id, String product_name, double product_price, String product_description, int product_type_id, int product_inventory, String images_url) {
+        this.productId = product_id;
+        this.productName = product_name;
+        this.productPrice = product_price;
+        this.productDescription = product_description;
+        this.productTypeId = product_type_id;
+        this.productInventory = product_inventory;
+        this.images_url = images_url;
+    }
+    public String getImages_url() {
+        return images_url;
+    }
+
+    public void setImages_url(String images_url) {
+        this.images_url = images_url;
     }
 
     public Product(int productId, String productName, double productPrice, double oldPrice, String productDescription, int productTypeId, int productInventory) {

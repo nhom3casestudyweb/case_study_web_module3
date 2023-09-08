@@ -134,7 +134,7 @@
                         <a href="/customer">Quản lí người dùng</a>
                     </li>
                     <li>
-                        <a href="">Quản lí Sản phẩm</a>
+                        <a href="/product-servlet">Quản lí Sản phẩm</a>
                     </li>
                 </div>
 

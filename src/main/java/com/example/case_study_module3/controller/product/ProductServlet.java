@@ -24,8 +24,6 @@ public class ProductServlet extends HttpServlet {
         switch (action) {
             case "showFormCreate":
                 break;
-            case "showFormUpdate":
-                break;
             case "showFormSearch":
                 showFormSearch(request,response);
                 break;
@@ -59,7 +57,35 @@ public class ProductServlet extends HttpServlet {
             case "showListAccessoriesAdmin":
                 showListAccessoriesAdmin(request,response);
                 break;
+            case "editProduct" :
+                editProduct(request,response);
+                break;
             default:
+                showFormCreate(request,response);
+                break;
+        }
+    }
+    private void editProduct(HttpServletRequest request, HttpServletResponse response) {
+        int idProduct = Integer.parseInt(request.getParameter("code"));
+        Product product = productService.editProduct(idProduct);
+        request.setAttribute("product",product);
+        try {
+            request.getRequestDispatcher("form_edit_product.jsp").forward(request,response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void showFormCreate(HttpServletRequest request, HttpServletResponse response) {
+        List<Product> productList = productService.showListProduct();
+        request.setAttribute("productList",productList);
+        try {
+            request.getRequestDispatcher("adimin_product.jsp").forward(request,response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -188,6 +214,52 @@ public class ProductServlet extends HttpServlet {
         switch (action){
             case "search":
                 searchByName(request,response);
+                break;
+            case "deleteProduct":
+                deleteProduct(request,response);
+                break;
+            case "editProduct" :
+                editProducts(request,response);
+                break;
+            case "createProduct" :
+                createProduct(request,response);
+                break;
+        }
+    }
+    private void createProduct(HttpServletRequest request, HttpServletResponse response) {
+        String product_name = request.getParameter("product_name");
+        int old_price = Integer.parseInt(request.getParameter("old_price"));
+        int product_price = Integer.parseInt(request.getParameter("product_price"));
+        String product_description = request.getParameter("product_description");
+        int product_type = Integer.parseInt(request.getParameter("product_type"));
+        int product_inventory = Integer.parseInt(request.getParameter("product_inventory"));
+        productService.createProduct(product_name,old_price,product_price,product_description,product_type,product_inventory);
+        try {
+            response.sendRedirect("/product-servlet");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void editProducts(HttpServletRequest request, HttpServletResponse response) {
+        int productId = Integer.parseInt(request.getParameter("code"));
+        String productNam = request.getParameter("product_name");
+        double productPrice = Double.parseDouble(request.getParameter("price"));
+        int productType = Integer.parseInt(request.getParameter("product_type"));
+        int productInventory = Integer.parseInt(request.getParameter("product_inventory"));
+        productService.editProducts(productId,productNam,productPrice,productType,productInventory);
+        try {
+            response.sendRedirect("/product-servlet");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        productService.deleteProduct(id);
+        try {
+            response.sendRedirect("/product-servlet");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

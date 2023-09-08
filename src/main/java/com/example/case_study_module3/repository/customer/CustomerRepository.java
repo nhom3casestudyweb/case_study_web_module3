@@ -1,7 +1,7 @@
 package com.example.case_study_module3.repository.customer;
 
 import com.example.case_study_module3.model.customer.Customer;
-import com.example.case_study_module3.repository.product.BaseProductRepository;
+import com.example.case_study_module3.repository.BaseProductRepository;
 
 import java.sql.*;
 import java.util.ArrayList;

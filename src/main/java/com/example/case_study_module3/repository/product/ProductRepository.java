@@ -1,6 +1,7 @@
 package com.example.case_study_module3.repository.product;
 
 import com.example.case_study_module3.model.product.Product;
+import com.example.case_study_module3.repository.BaseProductRepository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -13,6 +14,14 @@ public class ProductRepository implements IProductRepository {
     private static final String SELECT_ALL_PRODUCT = "call show_all_product();";
 
     private static final String SELECT_PRODUCT_DETAIL = "call show_product_detail(?);";
+    private static final String INSERT_PRODUCT = "call case_study_web_group3.show_product()";
+    private static final String DELETE_PRODUCT = "call case_study_web_group3.delete_product(?)";
+    private static final String EDIT_PRODUCT = "call case_study_web_group3.edit_product(?)";
+    private static final String EDIT_PRODUCTS = "call case_study_web_group3.edit_products(?,?,?,?,?)";
+//    private static final String CREATE_PRODUCT = "call case_study_web_group3.create_product(?,?,?,?,?)";
+    private static final String CREATE_PRODUCT = "insert into product(product_name,old_price, product_price, product_description,\n" +
+        "product_type_id, product_inventory) value\n" +
+        "(?,?,?,?,?,?);";
 //    private static final String FIND_PRODUCT_BY_NAME =
 
     @Override
@@ -137,5 +146,100 @@ public class ProductRepository implements IProductRepository {
             throw new RuntimeException(e);
         }
         return productList;
+    }
+
+    @Override
+    public List<Product> showListProduct() {
+        List<Product> productList = new ArrayList<>();
+        try {
+            CallableStatement callableStatement = BaseProductRepository.getConnection().prepareCall(INSERT_PRODUCT);
+            ResultSet resultSet = callableStatement.executeQuery();
+            while (resultSet.next()) {
+                int product_id = resultSet.getInt("product_id");
+                String product_name = resultSet.getString("product_name");
+                double product_price = resultSet.getDouble("product_price");
+                String product_description = resultSet.getString("product_description");
+                int product_type_id = resultSet.getInt("product_type_id");
+                int product_inventory = resultSet.getInt("product_inventory");
+                productList.add(new Product(product_id,product_name,product_price,product_description,product_type_id,product_inventory));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productList;
+    }
+
+    @Override
+    public void deleteProduct(int id) {
+        try {
+            CallableStatement callableStatement = BaseProductRepository.getConnection().prepareCall(DELETE_PRODUCT);
+            callableStatement.setInt(1,id);
+            callableStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public Product editProduct(int idProduct) {
+        Product product = new Product();
+        try {
+            CallableStatement callableStatement = BaseProductRepository.getConnection().prepareCall(EDIT_PRODUCT);
+            callableStatement.setInt(1,idProduct);
+            ResultSet resultSet = callableStatement.executeQuery();
+            while (resultSet.next()){
+                int product_id = resultSet.getInt("product.product_id");
+                String product_name = resultSet.getString("product.product_name");
+                double product_price = resultSet.getDouble("product.product_price");
+                String product_description = resultSet.getString("product.product_description");
+                int product_type_id = resultSet.getInt("product.product_type_id");
+                int product_inventory = resultSet.getInt("product.product_inventory");
+                String images_url = resultSet.getString("product_images.images_url");
+                product = new Product(product_id,product_name,product_price,product_description,product_type_id,product_inventory,images_url);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return product;
+    }
+
+    @Override
+    public void editProducts(int productId, String productNam, double productPrice, int productType, int productInventory) {
+        try {
+            CallableStatement callableStatement = BaseProductRepository.getConnection().prepareCall(EDIT_PRODUCTS);
+            callableStatement.setInt(1,productId);
+            callableStatement.setString(2,productNam);
+            callableStatement.setDouble(3,productPrice);
+            callableStatement.setInt(4,productType);
+            callableStatement.setInt(5,productInventory);
+            callableStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void createProduct(String productName, int old_price, int productPrice, String productDescription, int productType, int productInventory) {
+        try {
+            PreparedStatement preparedStatement = BaseProductRepository.getConnection().prepareStatement(CREATE_PRODUCT);
+            preparedStatement.setString(1,productName);
+            preparedStatement.setInt(2,old_price);
+            preparedStatement.setInt(3,productPrice);
+            preparedStatement.setString(4,productDescription);
+            preparedStatement.setInt(5,productType);
+            preparedStatement.setInt(6,productInventory);
+            preparedStatement.executeUpdate();
+
+
+//            CallableStatement callableStatement = BaseProductRepository.getConnection().prepareCall(CREATE_PRODUCT);
+//            callableStatement.setString(1,productName);
+//            callableStatement.setInt(2,productPrice);
+//            callableStatement.setString(3,productDescription);
+//            callableStatement.setInt(4,productType);
+//            callableStatement.setInt(5,productInventory);
+//            callableStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

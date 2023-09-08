@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.example.case_study_module3.model.account.Account;
 import com.example.case_study_module3.model.customer.Customer;
-import com.example.case_study_module3.repository.product.BaseProductRepository;
+import com.example.case_study_module3.repository.BaseProductRepository;
 
 public class AccountRepository implements IAcountRepository {
     private static final String FIND_BY_USER_NAME = " call find_by_user_name(?) ";

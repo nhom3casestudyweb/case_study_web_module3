@@ -32,4 +32,27 @@ public class ProductService implements IProductService {
     public List<Product> findByName(String searchName) {
         return productRepository.findByName(searchName);
     }
+
+    @Override
+    public void deleteProduct(int id) {
+        productRepository.deleteProduct(id);
+    }
+
+    @Override
+    public Product editProduct(int idProduct) {
+        return productRepository.editProduct(idProduct);
+    }
+    @Override
+    public List<Product> showListProduct() {
+        return productRepository.showListProduct();
+    }
+    @Override
+    public void editProducts(int productId, String productNam, double productPrice, int productType, int productInventory) {
+        productRepository.editProducts(productId,productNam,productPrice,productType,productInventory);
+    }
+
+    @Override
+    public void createProduct(String productName, int old_price, int productPrice, String productDescription, int productType, int productInventory) {
+        productRepository.createProduct(productName,old_price,productPrice,productDescription,productType,productInventory);
+    }
 }

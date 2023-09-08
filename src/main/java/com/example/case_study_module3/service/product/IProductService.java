@@ -11,4 +11,12 @@ public interface IProductService {
     List<Product> showListAccessories();
     Product finById(int productId);
     List<Product> findByName(String searchName);
+    void deleteProduct(int id);
+    List<Product> showListProduct();
+
+    Product editProduct(int idProduct);
+
+    void editProducts(int productId, String productNam, double productPrice, int productType, int productInventory);
+
+    void createProduct(String productName, int old_price, int productPrice, String productDescription, int productType, int productInventory);
 }

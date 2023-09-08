@@ -68,7 +68,7 @@
           <a href="/customer">Quản lí người dùng</a>
         </li>
         <li>
-          <a href="">Quản lí Sản phẩm</a>
+          <a href="/account">Quản lí Sản phẩm</a>
         </li>
       </div>
     </ul>

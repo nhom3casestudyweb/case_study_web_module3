@@ -1,4 +1,4 @@
-package com.example.case_study_module3.repository.product;
+package com.example.case_study_module3.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
